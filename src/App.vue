@@ -14,7 +14,7 @@
     },
     methods: {
       handleClick () {
-        this.message = 'bye bye world'
+        this.message = '小南南 是都比'
       }
     }
   }
