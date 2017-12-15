@@ -14,7 +14,7 @@
     },
     methods: {
       handleClick () {
-        this.message = 'bye bye world'
+        this.message = '大南哥你个逗比'
       }
     }
   }
