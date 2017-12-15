@@ -1,27 +1,15 @@
 <template>
   <div id="app">
-    <div class="dell" @click="handleClick">{{message}}</div>
+    abc
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'app',
-    data () {
-      return {
-        message: 'hello world'
-      }
-    },
-    methods: {
-      handleClick () {
-        this.message = 'bye bye world'
-      }
-    }
-  }
+export default {
+  name: 'app'
+}
 </script>
 
-<style scoped>
-  .dell {
-    color: red;
-  }
+<style>
+  
 </style>
