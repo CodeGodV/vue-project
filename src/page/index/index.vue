@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="background">
   	<header class="header">
   		<div class="back iconfont">&#xe624;</div>
   		<div class="search"></div>
@@ -16,8 +16,49 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
-    <div>21341</div>
     
+   <swiper :options="swiperOption" class="img-box">
+      <swiper-slide v-for="(pageitem, index) in pages" :key="index">
+        <div class="icon-wrapper">
+        	<div v-for="icons in pageitem" :key="icons.id" class="icons-img">
+        		<div class="icons-swiper">
+	          		<img class="icon-img" :src="icons.icon"/>
+        		</div>
+        		<p class="keys">{{icons.keys}}</p>
+        	</div>
+        </div>
+      </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
+    
+	<ul class="location-mes">
+		<li><a href="#" class="iconfont">&#xe600;定位失败</a></li>
+		<li><a href="#" class="iconfont">&#xe62e;5折跑温泉</a></li>
+	</ul>
+	
+	<ul class="special-offer">
+		<li v-for="(specials, index) in specialsInfo" :key="index">
+			<a href="#"><img :src="specials.specialsUrl" alt="" /></a>
+		</li>
+	</ul>
+	
+	<div class="recommend">
+		<h3 class="recommend-title">热销推荐</h3>
+		<div v-for="recommends in recommendInfo" :key="recommends.id" class="recommend-count">
+			<div class="address-img">
+				<img :src="recommends.imgUrl" alt="" />
+			</div>
+			<div>
+				<p>{{recommends.address}}</p>
+				<p>{{recommends.describe}}</p>
+				<p>
+					<em>{{recommends.price}}</em>
+					<span>起</span>
+				</p>
+			</div>
+		</div>
+	</div>
+	
   </div>
 </template>
 
@@ -28,16 +69,29 @@
 	  data () {
 	    return {
 	      swiperInfo: [],
+	      iconsInfo: [],
+	      specialsInfo: [],
+	      recommendInfo: [],
 	      swiperOption: {
-	        autoplay: 1000,
+	        autoplay: 5000,
 	        direction: 'horizontal',
-	        pagination: '.swiper-pagination', 
+	        pagination: '.swiper-pagination',
 	        loop: true
 	      }
 	    }
 	  },
-	  created () {
-	    this.getIndexData()
+	  computed: {
+	    pages () {
+	      const pages = []
+	      this.iconsInfo.forEach((item, index) => {
+	        let page = Math.floor(index / 8)
+	        if (!pages[page]) {
+	          pages[page] = []
+	        }
+	        pages[page].push(item)
+	      })
+	      return pages
+	    }
 	  },
 	  methods: {
 	    getIndexData () {
@@ -45,13 +99,25 @@
 	        .then(this.handleAjaxSucc.bind(this))
 	    },
 	    handleAjaxSucc (res) {
-	      this.swiperInfo = res.body.data.swiper
+	      var body = res.body
+	      if (body.data && body && body.data.swiper) {
+	        this.swiperInfo = res.body.data.swiper
+	        this.iconsInfo = body.data.icons
+	        this.specialsInfo = body.data.specials
+	        this.recommendInfo = body.data.recommend
+	      }
 	    }
+	  },
+	  created () {
+	    this.getIndexData()
 	  }
 	}
 </script>
 
 <style scoped>
+	.background {
+		background: #f5f5f5;
+	}
 	.header {
 		display: flex;
 		height: 0.86rem;
@@ -104,9 +170,95 @@
 		width: 100%;
 		padding-bottom: 31.25%;
 		height: 0;
-		/*height: 18vh;*/
+		background: #fff;
 	}
 	.swiper-img {
 		width: 100%;
+	}
+	.icon-wrapper {
+		overflow: hidden;
+		padding-bottom: 50%;
+		height: 0;
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 0.38rem;
+		background: #fff;
+	}
+	.icons-swiper {
+		box-sizing: border-box;
+		padding:0.5rem 0.5rem 0.1rem 0.5rem;
+	}
+	.icons-img {
+		Width: 25%;
+		box-sizing: border-box;
+		text-align: center;
+	}
+	.icon-img {
+		width: 100%;
+	}
+	.img-box {
+		border-bottom:0.01rem solid #ccc;
+		background: #fff;
+	}
+	.location-mes {
+		display: flex;
+		background: #fff;
+	}
+	.location-mes li {
+		display: flex;
+		width: 50%;
+	}
+	.location-mes li a {
+		text-align: center;
+		width: 100%;
+		line-height: 0.98rem;
+		color: #2b2b2b;
+	}
+	.location-mes li:first-child a {
+		border-right: 0.01rem solid #ccc;
+	}
+	.special-offer {
+		display: flex;
+		margin-top: 0.2rem;
+		background: #fff;
+		border-top: 0.01rem solid #ccc;
+		border-bottom: 0.01rem solid #ccc;
+	}
+	.special-offer li {
+		width: 50%;
+	}
+	.special-offer li a {
+		display: flex;
+		Height: 1.38rem;
+	}
+	.special-offer li:first-child {
+		border-right: 0.01rem solid #ccc;
+	}
+	.special-offer li a img {
+		width: 100%;
+	}
+	.recommend {
+		display: flex;
+		flex-direction: column;
+		padding-left: 0.55rem;
+	}
+	.recommend-title {
+		color: #171717;
+		font-size: 0.26rem;
+		line-height: 1.04rem;
+	}
+	.recommend-count {
+		display: flex;
+		box-sizing: border-box;
+		padding: 0.2rem 0.8rem 0.2rem 0;
+		height: 1.38rem;
+		justify-content: flex-start;
+	}
+	.recommend-count .address-img {
+		float: left;
+		padding-right: 0.22rem;
+	}
+	.recommend-count .address-img img{
+		height: 100%;
 	}
 </style>
