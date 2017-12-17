@@ -48,16 +48,79 @@
 			<div class="address-img">
 				<img :src="recommends.imgUrl" alt="" />
 			</div>
-			<div>
+			<div class="describe">
 				<p>{{recommends.address}}</p>
 				<p>{{recommends.describe}}</p>
 				<p>
-					<em>{{recommends.price}}</em>
-					<span>起</span>
+					<span>￥</span>
+					<em class="price">{{recommends.price}}</em>
+					<span class="price-up">起</span>
 				</p>
 			</div>
 		</div>
+		<div class="recommend-look">
+			<a href="#">查看所有产品</a>
+		</div>
 	</div>
+	
+	<div class="weekend">
+		<h3 class="gowhere">周末去哪儿</h3>
+		<div v-for="weekends in weekendInfo" :key="weekends.id" class="weekend-cont">
+			<div class="weekend-img">
+				<img :src="weekends.imgUrl" alt="" />
+			</div>
+			<div class="weekend-describe">
+				<p>{{weekends.title}}</p>
+				<p>{{weekends.cont}}</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="remark">
+		<span class="iconfont">&#xe625;</span>
+		<div class="remark-cont">
+			<span>票面价</span>
+			是指通过景区指定窗口售卖的纸质门票上标注的价格
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="footer-more">
+			<ul>
+				<li>
+						<span class="iconfont">&#xe601;</span>
+						<a class="footer-w">飞机</a>
+				</li>
+				<li>
+					<span class="iconfont">&#xe61f;</span>
+					<a class="footer-w">酒店</a>
+				</li>
+				<li>
+					<span class="iconfont">&#xe63c;</span>
+					<a class="footer-w">公寓</a>
+				</li>
+				<li>	
+					<span class="iconfont">&#xe66c;</span>
+					<a class="footer-w">更多</a>
+				</li>
+			</ul>
+		</div>
+		<ul class="aboutus">
+			<li><a href="#">登录</a></li>
+			<li><a href="#">我的订单</a></li>
+			<li><a href="#">最近浏览</a></li>
+			<li><a href="#">关于我们</a></li>
+		</ul>
+		<div class="footer-type">
+			<a href="#">触屏版</a>
+			<a href="#">电脑版</a>
+		</div>
+		<div class="ideas">
+			<span>Qunar 京ICP备05021087</span>
+			<a href="#">意见反馈</a>
+		</div>
+	</div>
+	
 	
   </div>
 </template>
@@ -72,6 +135,7 @@
 	      iconsInfo: [],
 	      specialsInfo: [],
 	      recommendInfo: [],
+	      weekendInfo: [],
 	      swiperOption: {
 	        autoplay: 5000,
 	        direction: 'horizontal',
@@ -105,6 +169,7 @@
 	        this.iconsInfo = body.data.icons
 	        this.specialsInfo = body.data.specials
 	        this.recommendInfo = body.data.recommend
+	        this.weekendInfo = body.data.weekends
 	      }
 	    }
 	  },
@@ -240,25 +305,174 @@
 	.recommend {
 		display: flex;
 		flex-direction: column;
-		padding-left: 0.55rem;
 	}
 	.recommend-title {
 		color: #171717;
 		font-size: 0.26rem;
 		line-height: 1.04rem;
+		padding-left: 0.24rem;
 	}
 	.recommend-count {
 		display: flex;
 		box-sizing: border-box;
 		padding: 0.2rem 0.8rem 0.2rem 0;
-		height: 1.38rem;
-		justify-content: flex-start;
+		height: 1.88rem;
+		background: #fff;
+		padding-left: 0.24rem;
+		border-bottom: 0.01rem solid #ccc;
 	}
 	.recommend-count .address-img {
 		float: left;
-		padding-right: 0.22rem;
+		margin-right: 0.22rem;
+		height: 100%;
 	}
 	.recommend-count .address-img img{
 		height: 100%;
 	}
-</style>
+	.describe {
+		width: 0.52rem;
+		flex: 1;
+	}
+	.describe p:first-child {
+		font-size: .26rem;
+		color: #202020;
+		margin-top: 0.04rem;
+	}
+	.describe p:nth-child(2) {
+		font-size: 0.26rem;
+		color: #a5a5a5;
+		line-height: .72rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.describe p:nth-child(3) {
+		color: #e78021;
+		font-size: .16rem;
+	}
+	.describe .price {
+		font-size: .36rem;
+	}
+	.describe .price-up {
+		color: #a5a5a5;
+	}
+	.recommend-look {
+		display: flex;
+	}
+	.recommend-look a {
+		text-align: center;
+		line-height: 0.9rem;
+		background: #fff;
+		Width: 100%;
+	}
+	.weekend {
+		display: flex;
+		flex-direction: column;
+		background: #fff;
+	}
+	.weekend .gowhere {
+		font-size: .26rem;
+		color: #171717;
+		line-height: .8rem;
+		padding-left: .24rem;
+	}
+	.weekend-img {
+		width: 100%;
+	}
+	.weekend-img img {
+		width: 100%;
+	}
+	.weekend-describe {
+		box-sizing: border-box;
+		padding: .14rem .2rem .2rem .2rem;
+	}
+	.weekend-describe p:first-child {
+		font-size: .28rem;
+		line-height: .48rem;
+		color: #1d1d1d;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.weekend-describe p:nth-child(2) {
+		color: #616161;
+    font-size: .24rem;
+    line-height: .42rem;
+    white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.remark {
+		display: flex;
+    margin-top: .1rem;
+    padding: .14rem .1rem;
+    font-size: .24rem;
+    line-height: .32rem;
+    background: #fff;
+    color: #616161;
+	}
+	.remark-cont {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.remark-cont span{
+		font-weight: 900;
+	}
+	.footer-more {
+		box-sizing: border-box;
+		padding: .1rem .88rem;
+	}
+	.footer-more ul{
+		display: flex;
+		box-sizing: border-box;
+		padding: 0.1rem .1rem 0 .1rem;
+		justify-content: space-around;
+	}
+	.footer-more ul li {
+		/*line-height: .94rem;*/
+		display: flex;
+	}
+	.footer-more ul li .iconfont {
+		font-size: .44rem!important;
+		color: #b2b2b2;
+		line-Height: .94rem;
+	}
+	.footer-more ul li .footer-w {
+		font-size: 0.26rem;
+		color: #b2b2b2;
+		line-height: .94rem;
+	}
+	.aboutus {
+		display: flex;
+		padding-bottom: .28rem;
+		border-bottom: .01rem solid #ccc;
+	}
+	.aboutus li {
+		margin-left: .42rem;
+	}
+	.aboutus li a {
+		font-size: .28rem;
+	}
+	.footer-type {
+		display: flex;
+		justify-content: center;
+	}
+	.footer-type a{
+		line-height: .7rem;
+		font-size: .28rem;
+		margin-left: .4rem
+	}
+	.ideas {
+		display: flex;
+		font-size: .3rem;
+		color: #a0a0a0;
+		justify-content: center;
+		padding-bottom: .22rem;
+		border-bottom: .01rem solid #ccc;
+	}
+	.ideas a {
+		font-size: .3rem;
+		color: #a0a0a0;
+	} 
+</style>s
