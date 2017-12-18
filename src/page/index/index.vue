@@ -21,9 +21,11 @@
       <swiper-slide v-for="(pageitem, index) in pages" :key="index">
         <div class="icon-wrapper">
         	<div v-for="icons in pageitem" :key="icons.id" class="icons-img">
-        		<div class="icons-swiper">
+        		<router-link to="/oneday">
+        			<div class="icons-swiper">
 	          		<img class="icon-img" :src="icons.icon"/>
-        		</div>
+        			</div>
+        		</router-link>
         		<p class="keys">{{icons.keys}}</p>
         	</div>
         </div>
