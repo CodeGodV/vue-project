@@ -368,6 +368,8 @@
 	.weekend {
 		display: flex;
 		flex-direction: column;
+	}
+	.weekend-count {
 		background: #fff;
 	}
 	.weekend .gowhere {
