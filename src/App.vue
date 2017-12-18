@@ -1,27 +1,13 @@
 <template>
-  <div id="app">
-    <div class="dell" @click="handleClick">{{message}}</div>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
   export default {
-    name: 'app',
-    data () {
-      return {
-        message: 'hello world'
-      }
-    },
-    methods: {
-      handleClick () {
-        this.message = '小南南 是都比'
-      }
-    }
+    name: 'app'
   }
 </script>
 
 <style scoped>
-  .dell {
-    color: red;
-  }
+
 </style>
