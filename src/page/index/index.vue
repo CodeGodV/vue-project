@@ -477,4 +477,4 @@
 		font-size: .3rem;
 		color: #a0a0a0;
 	} 
-</style>s
+</style>
