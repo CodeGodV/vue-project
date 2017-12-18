@@ -4,7 +4,7 @@
   		<div class="back iconfont">&#xe624;</div>
   		<div class="search"></div>
   		<div class="city">
-  			<a href="#">北京</a>
+  			<router-link to="/search">北京</router-link>
   		</div>
   	</header>
   	
