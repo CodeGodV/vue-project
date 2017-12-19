@@ -14,15 +14,34 @@
 
     <main>
       <div class="address-select">
-        <div class="address">
-          <ul>
+        <div class="address wrapper">
+          <ul class="content">
             <li v-for="address in addressInfo" :key="address.id">
               <span>{{address.address}}</span>
             </li>
           </ul>
         </div>
-        <div class="select">
+        <div class="select" @click="handlePullDown">
           <span class="iconfont">&#xe62d;</span>
+        </div>
+      </div>
+
+      <div class="mask" v-if="pullDown" ref="mask">
+        <div class="pull-down">
+          <div class="address-down">
+            <div class="pulldown-title">
+              <span>游玩景点</span>
+              <em>(可所选)</em>
+              <i class="iconfont" @click="handlePullDown">&#xe620;</i>
+            </div>
+            <div class="pulldown-wrapper">
+              <ul class="pulldown-cont">
+                <li v-for="address in addressInfo" :key="address.id">
+                  <span>{{address.address}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -82,6 +101,7 @@
 </template>
 
 <script>
+  import BScroll from 'better-scroll'
   export default {
     name: 'Oneday',
     data () {
@@ -90,7 +110,8 @@
         recommendInfo: [],
         scrolled: null,
         scrollTop: null,
-        show: false
+        show: false,
+        pullDown: false
       }
     },
     methods: {
@@ -116,11 +137,40 @@
         } else {
           this.show = true
         }
+        if (this.pullDown) {
+          this.$refs.mask.style.position = 'fixed'
+          this.$refs.mask.style.bottom = 0
+        }
+      },
+      handlePullDown () {
+        this.pullDown = !(this.pullDown)
+        this.$nextTick(() => {
+          this.scroll.refresh()
+        })
       }
     },
     mounted () {
       this.getOnedayMes()
       window.addEventListener('scroll', this.handleScroll)
+    },
+    distroyed () {
+      window.scrollY = null
+    },
+    updated () {
+      if (!this.pullDown) {
+        this.scroll = new BScroll('.wrapper', {
+          scrollX: true
+        })
+      } else {
+        this.scroll = new BScroll('.pulldown-wrapper')
+      }
+    },
+    watch: {
+      addressInfo () {
+        this.$nextTick(() => {
+          this.scroll.refresh()
+        })
+      }
     }
   }
 </script>
@@ -311,5 +361,56 @@
     font-size: .35rem;
     color: #fff;
     line-height: .42rem;
+  }
+  main {
+    position: relative;
+  }
+  .pulldown-title {
+    display: flex;
+    position: relative;
+  }
+  .pulldown-title span {
+    line-height: .8rem;
+    font-size: .28rem;
+    color: #212121;
+  }
+  .pulldown-title em {
+    line-height: .8rem;
+    font-size: .24rem;
+    color: #212121;
+  }
+  .pulldown-title i {
+    line-height: .8rem;
+    font-size: .3rem;
+    color: #212121;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    font-weight: 900;
+  }
+  .pulldown-cont {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .pulldown-cont span {
+    display: block;
+    background: #fff;
+    line-height: .56rem;
+    padding: 0 .22rem;
+    margin-right: .2rem;
+    margin-bottom: .2rem;
+  }
+  .mask {
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    padding: 0 .2rem;
+    height: 10rem;
+    background: #e5e7e8;
+  }
+  .pulldown-wrapper {
+  	height: 6rem;
+  	overflow: hidden;
+  	background: #e5e7e8;
   }
 </style>
