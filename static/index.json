@@ -160,7 +160,12 @@
 			"position": "【升级A】故宫 八达岭",
 			"time": "已过退款时间",
 			"price": "148"
-		}
+		},
+		"identityInfo":[{
+			"key": "0001",
+			"identity": "身份证",
+			"id": "identity-card"
+			}]
 
 	}
 }

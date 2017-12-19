@@ -65,9 +65,9 @@
 						<input type="text" class="prod-user-input" placeholder="请填写手机号" id="phoneNumber">
 					</p>
 					<p class="prod-user-infos">
-					<router-link to="">
-						<label for="certificate" class="prod-countInfo">身份证</label>
-					</router-link>
+					<!-- <router-link to=""> -->
+						<label for="certificate" class="prod-countInfo" @click="handleCardsClick">身份证</label>
+					<!-- </router-link> -->
 						<input type="text" class="prod-user-input" placeholder="请填写正确的身份证号码"  id="certificate">
 					</p>
 				</div>
@@ -102,6 +102,9 @@
 	  created () {
 	    this.getUserInfo()
 	  },
+	  mounted () {
+	    console.log(this.$route.params.identity)
+	  },
 	  methods: {
 	    handleProdAddFocus () {},
 	    getUserInfo () {
@@ -123,7 +126,10 @@
 	      this.totalPrice = this.prodInfo.price * this.count
 	    },
 	    handleDetailsClick () {
-	    	this.show = !this.show
+	      this.show = !this.show
+	    },
+	    handleCardsClick () {
+	      this.$router.push('/identity')
 	    }
 	  }
 	}
