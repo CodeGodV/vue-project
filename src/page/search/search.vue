@@ -7,8 +7,8 @@
                 </router-link>
                 <div class="mp-header-title">
                     <div class="mp-header-citycon">
-                        <span class="mp-header-city" @click="handleChina" :str="false">国内</span>
-                        <span class="mp-header-city" @click="handleForeign" :str="false">海外</span>
+                        <span class="mp-header-city" @click="handleChinaData">国内</span>
+                        <span class="mp-header-city" @click="handleForeignData">海外</span>
                     </div>
                 </div>           
             </div>
@@ -22,88 +22,55 @@
                 <a class="mp-cityitem-light">北京</a>
             </div>
         </div>
-        <div class="popularCity">
-            <div class="popCityTitle">热门城市</div>
-            <div class="popCityCon">
-                <a class="popCity" v-for="item in cityInfo" :key="item.id">{{item.name}}</a>
-            </div>
-        </div>
-        <div class="city" v-for="item in chinaCityInfo">
-            <li class="cityNum">{{item.number}}</li>
-            <li class="cityList" v-for="items in item.address">{{items.name}}</li>
-        </div>
-        <div class="letters">
-            <li>A</li>
-            <li>B</li>
-            <li>C</li>
-            <li>D</li>
-            <li>E</li>
-            <li>F</li>
-            <li>G</li>
-            <li>H</li>
-            <li>J</li>
-            <li>K</li>
-            <li>L</li>
-            <li>M</li>
-            <li>N</li>
-            <li>P</li>
-            <li>Q</li>
-            <li>R</li>
-            <li>S</li>
-            <li>T</li>
-            <li>W</li>
-            <li>X</li>
-            <li>Y</li>
-            <li>Z</li>
-        </div>
+        <hot-city :cityInfo="cityInfo" :chinaCityInfo="chinaCityInfo" v-if="flag"></hot-city>
+        <pop-city :cityInfo="cityInfo" :chinaCityInfo="chinaCityInfo" v-else></pop-city>
     </div>
 </template>
 <script>
+import HotCity from './china'
+import PopCity from './foreign'
 export default {
   name: 'Search',
   data () {
     return {
-      str: '',
+      china: true,
+      flag: true,
       cityInfo: [],
       chinaCityInfo: []
     }
   },
+  components: {
+    HotCity,
+    PopCity
+  },
   methods: {
+    handleChinaData: function () {
+      this.china = true
+      this.flag = true
+    },
+    handleForeignData: function () {
+      this.china = false
+      this.flag = false
+    },
     getIndexData () {
       this.$http.get('/static/search.json')
-      .then(this.handleAjaxSucc.bind(this))
+       .then(this.handleAjaxSucc.bind(this))
     },
     handleAjaxSucc (res) {
       var body = res.body
-      if (body.data && body && body.data.China) {
+      if (body.data && body && this.china) {
         this.cityInfo = body.data.China.popCity
         this.chinaCityInfo = body.data.China.ChinaCity
-      }
-    },
-    handleChina: function (e) {
-      if (this.str) {
-        this.str = 'false'
-        e.target.style.background = '#fff'
-        e.target.style.color = '#00bcd2'
       } else {
-        this.str = 'true'
-        e.target.style.background = '#00bcd2'
-        e.target.style.color = '#fff'
-      }
-    },
-    handleForeign: function (e) {
-      if (this.str) {
-        this.str = 'false'
-        e.target.style.background = '#fff'
-        e.target.style.color = '#00bcd2'
-      } else {
-        this.str = 'true'
-        e.target.style.background = '#00bcd2'
-        e.target.style.color = '#fff'
+        this.cityInfo = body.data.Foreign.popCity
+        this.chinaCityInfo = body.data.Foreign.ForeignCity
       }
     }
   },
   created () {
+    this.getIndexData()
+  },
+  updated () {
     this.getIndexData()
   }
 }
@@ -187,64 +154,5 @@ export default {
         border-radius: 0.06rem;
         text-align: center;
         line-height: 0.6rem;
-    }
-    .popCityTitle{
-        height: .54rem;
-        line-height: .54rem;
-        padding-left: .3rem;
-        color: #616161;
-        font-size: .26rem;
-        border-bottom: 0.01rem solid #ccc;
-        background: #f5f5f5;
-    }
-    .popCityCon{
-        display: flex;
-        flex-wrap: wrap;
-        border-bottom: 0.01rem solid #e1e1e1;
-        padding-top: .3rem;
-    }
-    .popCity{
-        display: block;
-        width: 28%;
-        height: .56rem;
-        color: black;
-        border: 0.01rem solid #e1e1e1;
-        text-align: center;
-        line-height: .56rem;
-        float: left;
-        margin: 0 0 .3rem .3rem; 
-    }
-    .cityNum{
-        list-style: none;
-        height: .52rem;
-        line-height: .52rem;
-        padding-left: .3rem;
-        color: #616161;
-        font-size: .26rem; 
-        background: #f6f6f6;
-        border-bottom: 0.01rem solid #e1e1e1;
-    }
-    .cityList{
-        list-style: none;
-        height: .66rem;
-        line-height: .66rem;
-        padding-left: .25rem;
-        color: #1b1b1b;
-        font-size: .26rem;
-        border-bottom: 0.01rem solid #e1e1e1;
-    }
-    .letters{
-        list-style: none;
-        position: fixed;
-        top: 4rem;
-        right: 0;
-        width: .32rem;
-        height: 7.5rem;
-    }
-    .letters>li{
-        text-align: center;
-        margin-bottom: 0.1rem;
-        color: #00bcd2;
-        font-size: .18rem;
     }
 </style>
