@@ -6,7 +6,8 @@ import Hotspring from '@/page/hotspring/hotspring.vue'
 import Order from '@/page/order/order.vue'
 import Identity from '@/page/order/identity.vue'
 import HongKong from '@/page/hongkong/hongkong.vue'
-
+import Reserve from '@/page/reserve/reserve.vue'
+import Skiing from '@/page/skiing/skiing.vue'
 
 Vue.use(Router)
 
@@ -43,6 +44,16 @@ export default new Router({
       path: '/hongkong',
       name: 'hongkong',
       component: HongKong
+    },
+    {
+      path: '/reserve',
+      name: 'reserve',
+      component: Reserve
+    },
+    {
+      path: '/skiing',
+      name: 'skiing',
+      component: Skiing
     }
   ]
 })
