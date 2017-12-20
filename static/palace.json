@@ -1,0 +1,170 @@
+{
+  "ret": true,
+  "data": {
+    "figure": [{
+        "id": "0001",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1712/5c/723bbb93e9683f02.jpg_640x200_7d38c6ad.jpg"
+      }, {
+        "id": "0002",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1609/15/630b82d932a3c402.jpg_640x200_862e836b.jpg"
+      }, {
+       "id": "0003",
+       "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/5a/cb4a0ccffeb99b02.jpg_640x200_1b0b75b1.jpg"
+      }],
+      "recommend": [{
+        "id": "0001",
+        "news":"天安门故宫珍宝馆+八达岭+颐和园+恭王府联票无线耳麦人工讲解",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png",
+        "price":40
+      },{
+        "id": "0002",
+        "news":"【5大景点】广场+故宫+八达岭长城+鸟巢水立方，北京一日游",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png",
+        "price":40
+      }],
+    "adult": [{
+        "id": "0001",
+        "details":"上午场",
+        "news":"凭身份证入园",
+        "price":"40"
+      },{
+        "id": "0002",
+        "details":"上午场",
+        "news":"凭身份证入园",
+         "price":"40"
+      }],
+    "student": [{
+        "id": "0001",
+        "details":"上午场",
+        "news":"凭身份证入园",
+        "price":"40"
+      },{
+        "id": "0002",
+        "details":"上午场",
+        "news":"凭身份证入园",
+         "price":"40"
+      }],
+    "old": [{
+        "id": "0001",
+        "details":"上午场",
+        "news":"凭身份证入园",
+        "price":"20"
+      },{
+        "id": "0002",
+        "details":"上午场",
+        "news":"凭身份证入园",
+         "price":"20"
+      }],
+    "combination": [{
+        "id": "0001",
+        "details":"上午场成人票+自助导览器",
+        "news":"凭身份证入园",
+        "price":"60"
+      },{
+        "id": "0002",
+        "details":"【大内御讲 9:00场】蓝琪儿格格带您穿越故宫（含故宫+珍宝馆门票）",
+        "price":"115"
+      }],
+   "selfHelpGuide": [{
+        "id": "0001",
+        "details":"中文版",
+        "news":"免押金",
+        "price":"9.9"
+      },{
+        "id": "0002",
+        "details":"英文版",
+        "news":"免押金",
+        "price":"40"
+      }],
+   "jewelry": [{
+        "id": "0001",
+        "details":"珍宝馆成人票",
+        "news":"凭身份证入园，需购买午门门票",
+        "price":"10"
+      },{
+        "id": "0002",
+        "details":"珍宝馆学生/老人票",
+        "news":"凭身份证入园，需购买午门门票",
+        "price":"5"
+       } ],
+   "tourService": [{
+        "id": "0001",
+        "details":"【大内御讲 9:00场】蓝琪儿格格带您穿越故宫",
+        "news":"（不含故宫门票）",
+        "price":"65"
+      },{
+        "id": "0002",
+        "details":"【09:00场次】故宫讲解服务",
+        "news":"（不含故宫门票）",
+        "price":"27"
+      } ],
+   "MuseumGift": [{
+        "id": "0001",
+        "details":"故宫-婴儿推车出租服务",
+        "price":"99"
+      },{
+        "id": "0002",
+        "details":"故宫-轮椅出租服务",
+        "price":"150"
+      } ],
+   "dayTour": [{
+        "id": "0001",
+        "details":"【去哪儿推荐】天安门广场+故宫+八达岭长城1日游",
+        "price":"148"
+      },{
+        "id": "0002",
+        "details":"【北京出发】故宫+颐和园+清华北大1日游",
+        "price":"108"
+      } ],
+   "userappraise": [{
+      "id": "0001",
+      "details":"天安门广场",
+      "news":"整整玩了一天，就这还没逛完这座世界上最伟大最大最完整最震撼的宫殿。取票方便，刷身份证就可以直接进，不排队，游客服务中心提供热水和电视充电插座，点赞！里面的珍宝太多，几天几夜都看不完，票价只要六十块太值了！徜徉在长长红墙下你会感觉时空穿越，物我两忘。就是几座大殿的中间不让围观拍照，只能从侧面看。",
+      "price":"￥20",
+      "imgUrl": "https://imgs.qunarzz.com/piao/fusion/1711/48/5eb720d741e7ee02.jpg_228x168_836f5a9f.jpg"
+      },{
+      "id": "0002",
+      "details":"南山滑雪场",
+      "news":"直接把故宫所有需要买票的地方的票都买了，不用取票，直接刷身份证就可以进，很方便，这次去的时间可能不凑巧，最中央的几个大殿都不让进，只有钟表馆，珍宝馆还有其他的陈列文物的地方是允许进的，不过我对钟表馆里的各种钟表是欣赏不来的，珍宝馆里的玉石雕刻的确是很精巧，故宫一趟转下来腿都要断了。。真的是很大，光看没有什么感觉，只有转的时候才能真正体会到故宫的宏伟。",
+      "price":"￥97",
+      "imgUrl": "https://imgs.qunarzz.com/piao/fusion/1711/e7/dd88426980ca2502.jpg_228x168_94084b8c.jpg"
+    }],
+  "centerlists": [{
+      "id": "0001",
+      "details":"颐和园",
+      "news":"保存完整的一座皇家行宫御苑",
+       "price":"￥23.5",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_140x140_e20be8e0.jpg"
+      },{
+        "id": "0002",
+        "details":"天安门广场",
+        "news":"我爱北京天安门，天安门上太阳升",
+         "price":"￥20",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_140x140_ef235b1c.jpg"
+      },{
+      "id": "0003",
+      "details":"南山滑雪场",
+      "news":"北京专业级滑雪圣地",
+       "price":"￥97",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_140x140_abb362a7.jpg"
+    },{
+      "id": "0004",
+      "details":"世界花卉大观园",
+      "news":"揽天下奇花异草，聚世界经典园林",
+       "price":"￥33.1",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1604/1e/1e75f8e1af9fe81f90.img.jpg_140x140_b555f882.jpg"
+    },{
+      "id": "0005",
+      "details":"颐和园",
+      "news":"保存完整的一座皇家行宫御苑",
+       "price":"￥23.5",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_140x140_e20be8e0.jpg"
+    },{
+      "id": "0006",
+        "details":"天安门广场",
+        "news":"我爱北京天安门，天安门上太阳升",
+         "price":"￥20",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_140x140_ef235b1c.jpg"
+    }]
+  }
+}
