@@ -7,16 +7,17 @@
 			<div class="title">其他证件选择</div>
 		</header>
 		<form action="">
-			<p v-for="item in identityInfo" :key="item.key" class="identity-list">
-			<router-link :to= ' "/order/"+item.identity'>
+			<p v-for="item in identityInfo" :key="item.key" class="identity-list" @click="changeIdentity(item.identity)">
+		    <router-link to= '/order'> 
 				<input type="radio" name="identity" id="item.id" >
 				<label for="item.id">{{item.identity}}</label>
-			</router-link>
+			</router-link> 
 			</p>
 		</form>
 	</div>
 </template>
 <script>
+	import { mapMutations } from 'vuex'
 	export default {
 	  name: 'identity',
 	  data () {
@@ -36,7 +37,8 @@
 	    handleGetIdentityInfo (res) {
       const body = res.body
       this.identityInfo = body.data.identityInfo
-	    }
+	    },
+	    ...mapMutations(['changeIdentity'])
 	  }
 	}
 </script>

@@ -90,6 +90,7 @@
 	</div>
 </template>
 <script>
+	import { mapState } from 'vuex'
 	export default {
 	  name: 'Order',
 	  data () {
@@ -98,8 +99,7 @@
 	      prodInfo: [],
 	      count: 1,
 	      show: false,
-	      totalPrice: 0,
-	      identity: '身份证'
+	      totalPrice: 0
 	    }
 	  },
 	  created () {
@@ -144,6 +144,9 @@
 	    handleCardsClick () {
 	      this.$router.push('/identity')
 	    }
+	  },
+	  computed: {
+    ...mapState(['identity'])
 	  }
 	}
 </script>

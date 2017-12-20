@@ -1,3 +1,3 @@
 export default {
-	'ifentity' : '身份证'
+  identity: '身份证'
 }
