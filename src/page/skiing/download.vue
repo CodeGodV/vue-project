@@ -12,7 +12,7 @@
           人的聪明选择
         </div>
       </div>
-      <div class="download-btn">下载客户端</div>
+      <div class="download-btn" @click='handelDownloadClick'>下载客户端</div>
       <div class="download-close">
         <img class="down-close-img" src="//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/modifydelete.png">
       </div>
@@ -21,7 +21,18 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    methods: {
+      handelDownloadClick () {
+        const str = window.navigator.userAgent
+        if (str.indexOf('Android') > -1) {
+          window.location = 'https://touch.qunar.com/h5/download?bd_source=qunar&scheme=home'
+        } else if (str.indexOf('iPhone') > -1) {
+          window.location = 'https://itunes.apple.com/cn/app/id395096736'
+        }
+      }
+    }
+  }
 </script>
 
 <style scoped>

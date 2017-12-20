@@ -13,6 +13,73 @@
 		},{
 			"id":"004",
 			"imgUrl":"http://img1.qunarzz.com/piao/fusion/1712/e9/d124b88edd9fdc02.jpg_629x299_53fb8c5e.jpg"
+		}],
+		"area":[{
+			"id":"001",
+			"name":"华北地区",
+			"desc":"华北区人气雪场",
+			"imgWrap":"http://img1.qunarzz.com/piao/fusion/1711/d6/c88b2a7cc6dcea02.jpg_307x100_54fc4142.jpg",
+			"imgPic":"http://s.qunarzz.com/piao_topic/image/touch/custom/2017/2579huaxue/tab-decoration1.png",
+			"palce":[{
+				"id":"001",
+				"price": "130",
+				"sign": "温暖无风",
+				"name": "富龙滑雪场",
+				"imgBg":"http://s.qunarzz.com/piao_topic/image/touch/custom/2017/2579huaxue/top2.png",
+				"imgUrl":"http://img1.qunarzz.com/piao/fusion/1712/6b/dacc31cd16745202.jpg_336x221_bb39743e.jpg"
+			},{
+				"id":"002",
+				"price": "115",
+				"sign": "离市区近",
+				"name": "军都山滑雪场",
+				"imgBg":"http://s.qunarzz.com/piao_topic/image/touch/custom/2017/2579huaxue/top3.png",
+				"imgUrl":"http://img1.qunarzz.com/sight/p0/1711/66/661d6a43e3e4dceda3.water.jpg_336x221_dedeca08.jpg"
+			},{
+				"id":"003",
+				"price": "58",
+				"sign": "梦幻雪雕",
+				"name": "渔阳滑雪场",
+				"imgUrl":"http://img1.qunarzz.com/sight/p0/1711/66/661d6a43e3e4dceda3.water.jpg_336x221_dedeca08.jpg"
+			},{
+				"id":"004",
+				"price": "100",
+				"sign": "星座雪道",
+				"name": "翠云山银河滑雪场",
+				"imgUrl":"http://img1.qunarzz.com/sight/p0/1711/66/661d6a43e3e4dceda3.water.jpg_336x221_dedeca08.jpg"
+			}]
+		},{
+			"id":"002",
+			"name":"东北地区",
+			"desc":"东北人去哪滑雪",
+			"imgWrap":"http://img1.qunarzz.com/piao/fusion/1711/f9/6a64fa025b1c8002.jpg_307x100_3e11a768.jpg",
+			"imgPic":"http://s.qunarzz.com/piao_topic/image/touch/custom/2017/2579huaxue/tab-decoration_v3.png",
+			"palce":[{
+				"id":"001",
+				"price": "130",
+				"sign": "温暖无风",
+				"name": "富龙滑雪场",
+				"imgBg":"http://s.qunarzz.com/piao_topic/image/touch/custom/2017/2579huaxue/top2.png",
+				"imgUrl":"http://img1.qunarzz.com/piao/fusion/1712/6b/dacc31cd16745202.jpg_336x221_bb39743e.jpg"
+			},{
+				"id":"002",
+				"price": "115",
+				"sign": "离市区近",
+				"name": "军都山滑雪场",
+				"imgBg":"http://s.qunarzz.com/piao_topic/image/touch/custom/2017/2579huaxue/top3.png",
+				"imgUrl":"http://img1.qunarzz.com/sight/p0/1711/66/661d6a43e3e4dceda3.water.jpg_336x221_dedeca08.jpg"
+			},{
+				"id":"003",
+				"price": "58",
+				"sign": "梦幻雪雕",
+				"name": "渔阳滑雪场",
+				"imgUrl":"http://img1.qunarzz.com/sight/p0/1711/66/661d6a43e3e4dceda3.water.jpg_336x221_dedeca08.jpg"
+			},{
+				"id":"004",
+				"price": "100",
+				"sign": "星座雪道",
+				"name": "翠云山银河滑雪场",
+				"imgUrl":"http://img1.qunarzz.com/sight/p0/1711/66/661d6a43e3e4dceda3.water.jpg_336x221_dedeca08.jpg"
+			}]
 		}]
 	}
 }

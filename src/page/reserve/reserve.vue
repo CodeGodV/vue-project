@@ -67,14 +67,14 @@
           <p class="comments-info-eval">不错，挺靠谱的，服务也不错，</p>
         </div>
       </div>
-      <tab-reserve></tab-reserve>
+      <tab-reserve ref="tab"></tab-reserve>
       <more-price></more-price>
       <div class="footer">
         <div class="footer-left">
           <i class="iconfont footer-icon">&#xe626;</i>
           <span class="footer-text">咨询</span>
         </div>
-        <div class="footer-right"><a class="footer-btn" href="#">立即预订</a></div>
+        <div class="footer-right" @click="handelReserClick"><a class="footer-btn" href="javascript:;">立即预订</a></div>
       </div>
     </div>
     <option-reserve></option-reserve>
@@ -101,7 +101,10 @@
         } else {
           this.$refs.header.style.opacity = 0
         }
-      }
+        // console.log(this.scrolled)
+        
+      },
+      handelReserClick () {}
     },
     mounted () {
       window.addEventListener('scroll', this.handleScroll)
