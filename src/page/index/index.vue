@@ -1,13 +1,13 @@
 <template>
   <div class="background">
-    <header class="header">
-      <div class="back iconfont">&#xe624;</div>
-      <div class="search"></div>
-      <div class="city">
-        <a href="#">北京</a>
-      </div>
-    </header>
-    
+  	<header class="header">
+  		<div class="back iconfont">&#xe624;</div>
+  		<div class="search"></div>
+  		<div class="city">
+  			<a href="#">北京</a>
+  		</div>
+  	</header>
+  	<router-link to="/hongkong">
     <swiper :options="swiperOption">
       <swiper-slide v-for="(item, index) in swiperInfo" :key="item.id">
         <div class="swiper-img-con" @click="handelSkiingClick(item.id)">
@@ -16,8 +16,8 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
-    
-    <swiper :options="swiperOption" class="img-box">
+    </router-link>
+   <swiper :options="swiperOption" class="img-box">
       <swiper-slide v-for="(pageitem, index) in pages" :key="index">
         <div class="icon-wrapper">
         	<div v-for="icons in pageitem" :key="icons.id" class="icons-img">
