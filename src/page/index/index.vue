@@ -17,7 +17,7 @@
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
     
-   <swiper :options="swiperOption" class="img-box">
+   	<swiper :options="swiperOption" class="img-box">
       <swiper-slide v-for="(pageitem, index) in pages" :key="index">
         <div class="icon-wrapper">
         	<div v-for="icons in pageitem" :key="icons.id" class="icons-img">

@@ -67,50 +67,40 @@
           <p class="comments-info-eval">不错，挺靠谱的，服务也不错，</p>
         </div>
       </div>
-      <tab-index></tab-index>
+      <tab-reserve></tab-reserve>
+      <more-price></more-price>
       <div class="footer">
         <div class="footer-left">
           <i class="iconfont footer-icon">&#xe626;</i>
           <span class="footer-text">咨询</span>
         </div>
-        <div class="footer-right" @click='handelReserveClick'><a class="footer-btn" href="#">立即预订</a></div>
+        <div class="footer-right"><a class="footer-btn" href="#">立即预订</a></div>
       </div>
     </div>
-    <option-index></option-index>
+    <option-reserve></option-reserve>
   </div>
 </template>
 
 <script>
-  import OptionIndex from './option'
-  import TabIndex from './tab'
+  import OptionReserve from './option'
+  import TabReserve from './tab'
+  import MorePrice from './moreprice'
   export default {
     name: 'Reserve',
 
     components: {
-      OptionIndex,
-      TabIndex
+      OptionReserve,
+      TabReserve,
+      MorePrice
     },
     methods: {
       handleScroll () {
         this.scrolled = window.scrollY
-        this.tab = document.querySelector('.tab')
-        this.header = document.querySelector('.header')
-        this.scheduling = document.querySelector('.scheduling')
-        this.tabScrolled = this.tab.offsetTop
         if (this.scrolled > 0) {
-          this.header.style.opacity = 1
+          this.$refs.header.style.opacity = 1
         } else {
-          this.header.style.opacity = 0
+          this.$refs.header.style.opacity = 0
         }
-        if (this.scrolled > this.tabScrolled - this.$refs.header.offsetHeight) {
-          this.tab.style.position = 'fixed'
-          this.tab.style.top = this.$refs.header.offsetHeight + 'px'
-        } else {
-          this.tab.style.position = ''
-        }
-      },
-      handelReserveClick () {
-        document.querySelector('.option').style.display = 'block'
       }
     },
     mounted () {
