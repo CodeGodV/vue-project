@@ -35,7 +35,7 @@
     
 	<ul class="location-mes">
 		<li><a href="#" class="iconfont">&#xe600;定位失败</a></li>
-		<li><a href="#" class="iconfont">&#xe62e;5折跑温泉</a></li>
+		<li><a href="#" class="iconfont" @click="handleClickLocation">&#xe62e;5折泡温泉</a></li>
 	</ul>
 	
 	<ul class="special-offer">
@@ -157,6 +157,9 @@
 	        this.recommendInfo = body.data.recommend
 	        this.weekendInfo = body.data.weekends
 	      }
+	    },
+	    handleClickLocation () {
+	      this.$router.push('/hotspring')
 	    }
 	  },
 	  created () {
