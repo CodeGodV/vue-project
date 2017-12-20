@@ -7,7 +7,7 @@
   			<a href="#">北京</a>
   		</div>
   	</header>
-  	
+  	<router-link to="/hongkong">
     <swiper :options="swiperOption">
       <swiper-slide v-for="item in swiperInfo" :key="item.id">
         <div class="swiper-img-con">
@@ -16,7 +16,7 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
-    
+    </router-link>
    <swiper :options="swiperOption" class="img-box">
       <swiper-slide v-for="(pageitem, index) in pages" :key="index">
         <div class="icon-wrapper">
