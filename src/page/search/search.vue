@@ -7,14 +7,14 @@
                 </router-link>
                 <div class="mp-header-title">
                     <div class="mp-header-citycon">
-                        <span class="mp-header-city" @click="handleChinaData">国内</span>
-                        <span class="mp-header-city" @click="handleForeignData">海外</span>
+                        <span class="mp-header-city" @click="handleChinaData" :class='[{inloadColor:Chinaflag}]'>国内</span>
+                        <span class="mp-header-city" @click="handleForeignData" :class='[{inloadColor:Foreignflag}]'>海外</span>
                     </div>
                 </div>           
             </div>
         </div>
         <div class="write">
-            <input type="text" class="writeIn" placeholder="输入城市名或拼音">
+            <input type="text" class="writeIn" placeholder="输入城市名或拼音" ref="input" @focus="handleInputChange" @blur="handleInputBack">
         </div>
         <div class="mp-cityarea-group">
             <div class="mp-cityarea-title">您的位置</div>
@@ -22,8 +22,8 @@
                 <a class="mp-cityitem-light">北京</a>
             </div>
         </div>
-        <hot-city :cityInfo="cityInfo" :chinaCityInfo="chinaCityInfo" v-if="flag"></hot-city>
-        <pop-city :cityInfo="cityInfo" :chinaCityInfo="chinaCityInfo" v-else></pop-city>
+        <hot-city :cityInfo="cityInfo" :chinaCityInfo="chinaCityInfo" v-show="flag"></hot-city>
+        <pop-city :citywaiInfo="citywaiInfo" :chinawaiCityInfo="chinawaiCityInfo" v-show="!flag"></pop-city>
     </div>
 </template>
 <script>
@@ -35,8 +35,12 @@ export default {
     return {
       china: true,
       flag: true,
+      Chinaflag: true,
+      Foreignflag: false,
       cityInfo: [],
-      chinaCityInfo: []
+      chinaCityInfo: [],
+      citywaiInfo: [],
+      chinawaiCityInfo: []
     }
   },
   components: {
@@ -44,13 +48,19 @@ export default {
     PopCity
   },
   methods: {
-    handleChinaData: function () {
+    handleChinaData: function (e) {
       this.china = true
       this.flag = true
+      this.Chinaflag = true
+      this.Foreignflag = false
+      this.getIndexData()
     },
-    handleForeignData: function () {
+    handleForeignData: function (e) {
       this.china = false
       this.flag = false
+      this.Chinaflag = false
+      this.Foreignflag = true
+      this.getIndexData()
     },
     getIndexData () {
       this.$http.get('/static/search.json')
@@ -62,15 +72,20 @@ export default {
         this.cityInfo = body.data.China.popCity
         this.chinaCityInfo = body.data.China.ChinaCity
       } else {
-        this.cityInfo = body.data.Foreign.popCity
-        this.chinaCityInfo = body.data.Foreign.ForeignCity
+        this.citywaiInfo = body.data.Foreign.popCity
+        this.chinawaiCityInfo = body.data.Foreign.ForeignCity
       }
+    },
+    handleInputChange: function () {
+      this.$refs.input.placeholder = ''
+      this.$refs.input.style.textAlign = 'left'
+    },
+    handleInputBack: function () {
+      this.$refs.input.placeholder = '输入城市名或拼音'
+      this.$refs.input.style.textAlign = 'center'
     }
   },
   created () {
-    this.getIndexData()
-  },
-  updated () {
     this.getIndexData()
   }
 }
@@ -112,10 +127,9 @@ export default {
         font-size: .28rem;
         border: .02rem solid #fff;
     }
-    .mp-header-city:first-child{
+    .inloadColor{
         background: #fff;
-        color: #00bcd2;
-        border-radius: .06rem 0 0 .06rem;
+        color: #00afc7;
     }
     .write{
         display: flex;

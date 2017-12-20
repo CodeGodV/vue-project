@@ -7,11 +7,11 @@
     </div>
   </div>
   <div class="city" v-for="item in chinaCityInfo">
-    <li class="cityNum">{{item.number}}</li>
-    <li class="cityList" v-for="items in item.address">{{items.name}}</li>
+    <li class="cityNum" ref="li">{{item.number}}</li>
+    <li class="cityList" v-for="items in item.address" @click="handleCityChange(items.name)">{{items.name}}</li>
   </div>
-  <div class="letters">
-    <li v-for="item in chinaCityInfo" :key="item.id">{{item.number}}</li>
+  <div class="letters" ref="number">
+    <li v-for="item in chinaCityInfo" :key="item.id" @click="handleJumpClick(item.number)">{{item.number}}</li>
   </div>
 </div>
 </template>
@@ -23,6 +23,20 @@ export default {
     },
     chinaCityInfo: {
       type: Array
+    }
+  },
+  data () {
+    return {
+      letter: '',
+      arr: []
+    }
+  },
+  methods: {
+    handleJumpClick (number) {
+      
+    },
+    handleCityChange (city) {
+      this.$store.commit('changeCity', city)
     }
   }
 }

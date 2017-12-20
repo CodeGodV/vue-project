@@ -3,25 +3,25 @@
   <div class="popularCity">
     <div class="popCityTitle">热门城市</div>
     <div class="popCityCon">
-      <a class="popCity" v-for="item in cityInfo" :key="item.id">{{item.name}}</a>
+      <a class="popCity" v-for="item in citywaiInfo" :key="item.id">{{item.name}}</a>
     </div>
   </div>
-  <div class="city" v-for="item in chinaCityInfo">
+  <div class="city" v-for="item in chinawaiCityInfo">
     <li class="cityNum">{{item.number}}</li>
     <li class="cityList" v-for="items in item.address">{{items.name}}</li>
   </div>
   <div class="letters">
-    <li v-for="item in chinaCityInfo" :key="item.id">{{item.number}}</li>
+    <li v-for="item in chinawaiCityInfo" :key="item.id">{{item.number}}</li>
   </div>
 </div>
 </template>
 <script>
 export default {
   props: {
-    cityInfo: {
+    citywaiInfo: {
       type: Array
     },
-    chinaCityInfo: {
+    chinawaiCityInfo: {
       type: Array
     }
   }
