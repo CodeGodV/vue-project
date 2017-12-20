@@ -19,10 +19,12 @@
 		<div class="hongkong-nav">
 			<div class="back iconfont">&#xe624;</div>
 			<div class="nav-title">香港迪士尼乐园</div>
-			<div class="nav-backIndex">
-				<i class="iconfont">&#xe608;</i>
-				<span>首页</span>
-			</div>
+			<router-link to="/">
+				<div class="nav-backIndex">
+					<i class="iconfont">&#xe608;</i>
+					<span>首页</span>
+				</div>
+			</router-link>
 		</div>
 		<div>
 			<div class="hongkong-banner"><img class="banner-img" src="https://img1.qunarzz.com/piao/fusion/1712/26/8e023c469106ea02.jpg_640x330_5c89ce09.jpg" alt=""></div>
@@ -34,7 +36,6 @@
 					<li></li>
 					<li></li>
 				</ul>
-
 			</div>
 		</div>
 		<div class="main">
@@ -103,11 +104,130 @@
 							</li>	
 						</ul>
 					</div>
+				  </div>
+				</div>	
+				<div class="main-hotel">
+				<div class="main-hotel-item main-hotel-item-right">
+					<div class="main-hotel-imgs">
+						<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/89/296ef52a08190602.jpg_298x235_dbc4c2da.jpg" alt="">	
+					</div>
+					<h3 class="item-title">迪士尼探索家度假酒店</h3>
+					<ul class="main-hotel-cons">
+						<li class="item-list">
+							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+						</li>
+						<li class="item-list">
+							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+						</li>
+						<li class="item-list">
+							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+						</li>	
+					</ul>
 				</div>
+				<div class="main-hotel-item">
+					<div class="main-hotel-imgs">
+						<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/d0/5dcc359ebef74502.jpg_298x235_4002b15d.jpg" alt="">
+					</div>
+					<h3 class="item-title">迪士尼好莱坞酒店</h3>
+					<ul class="main-hotel-cons">
+						<li class="item-list">
+							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+						</li>
+						<li class="item-list">
+							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+						</li>
+						<li class="item-list">
+							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+						</li>	
+					</ul>
 				</div>
-					
+			</div>
+			<div class="item-hotel-con">
+				<div>
+					<div class="main-hotel-item main-hotel-item-con">
+						<div class="main-hotel-imgs">
+							<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/72/00ae2a869b53d802.jpg_604x267_325484ac.jpg" alt="">
+						</div>
+						<h3 class="item-title">迪士尼好莱坞酒店</h3>
+						<ul class="main-hotel-cons">
+							<li class="item-list">
+								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							</li>
+							<li class="item-list">
+								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							</li>
+							<li class="item-list">
+								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							</li>	
+						</ul>
+					</div>
+				  </div>
+				</div>
+				<div class="item-hotel-con">
+				<div>
+					<div class="main-hotel-item main-hotel-item-con">
+						<div class="main-hotel-imgs">
+							<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/72/00ae2a869b53d802.jpg_604x267_325484ac.jpg" alt="">
+						</div>
+						<h3 class="item-title">迪士尼好莱坞酒店</h3>
+						<ul class="main-hotel-cons">
+							<li class="item-list">
+								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							</li>
+							<li class="item-list">
+								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							</li>
+							<li class="item-list">
+								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							</li>	
+						</ul>
+					</div>
+				  </div>
+				</div>	
+				<div class="item-hotel-con">
+				<div>
+					<div class="main-hotel-item main-hotel-item-con">
+						<div class="main-hotel-imgs">
+							<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/72/00ae2a869b53d802.jpg_604x267_325484ac.jpg" alt="">
+						</div>
+						<h3 class="item-title">迪士尼好莱坞酒店</h3>
+						<ul class="main-hotel-cons">
+							<li class="item-list">
+								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							</li>
+							<li class="item-list">
+								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							</li>
+							<li class="item-list">
+								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							</li>	
+						</ul>
+					</div>
+				  </div>
+				</div>	
+				<div class="copy-right">
+					<p class="copy-right-item"> 适用于迪士尼设计、标志及产物： </p>
+					<p class="copy-right-item"> ©Disney/Pixar ©Mattel, Inc. ©Hasbro, Inc. </p>
+					<p class="copy-right-item"> ©Disney/Lucasfilm Ltd. © &amp; TM Lucasfilm Ltd. </p>
+					<p class="copy-right-item"> ©2017 MARVEL </p>
+				</div>			
+			</div>
 		</div>
-	</div>
 </template>
 <script>
  	export default {
@@ -125,10 +245,6 @@
  	}
 </script>
 <style scoped>
-	/* .container {
-		height: 100%;
-		position: relative;
-	} */
 	.ellipsis {
 		white-space: nowrap;
 		overflow: hidden;
@@ -224,6 +340,7 @@
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
+		color: #fff;
 	}
 	.hongkong-banner {
 		width: 100%;
@@ -316,5 +433,17 @@
 		width: 96.5%;
 		margin: 0 auto;
 		justify-content: center;
+	}
+	.copy-right {
+		padding : .28rem .18rem .44rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.copy-right-item {
+		color: #5d390b;
+		font-size: .2rem;
+		min-height: .3rem
 	}
 </style>

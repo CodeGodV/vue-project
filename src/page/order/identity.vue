@@ -1,13 +1,19 @@
 <template>
-	<div>
-		<router-link to="/order">
-			<form action="">
-				<p>
-					<input type="radio" name="identity" >
-					<label for="identity-card">身份证</label>
-				</p>
-			</form>
-		</router-link>
+	<div class="container">
+		<header class="header">
+			<router-link to="/order">
+				<div class="back iconfont">&#xe624;</div>
+			</router-link>
+			<div class="title">其他证件选择</div>
+		</header>
+		<form action="">
+			<p v-for="item in identityInfo" :key="item.key" class="identity-list">
+			<router-link :to= ' "/order/"+item.identity'>
+				<input type="radio" name="identity" id="item.id" >
+				<label for="item.id">{{item.identity}}</label>
+			</router-link>
+			</p>
+		</form>
 	</div>
 </template>
 <script>
@@ -15,10 +21,11 @@
 	  name: 'identity',
 	  data () {
 	    return {
-	      identityInfo: []
+	      identityInfo: [],
+	      identitys: '123'
 	    }
 	  },
-	  updated () {
+	  created () {
 	    this.getIdentity()
 	  },
 	  methods: {
@@ -33,6 +40,30 @@
 	  }
 	}
 </script>
-<script scoped>
-
-</script>
+<style scoped>
+	.container {
+		height: 100%;
+		background: #f5f5f5;
+	}
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		height: .88rem;
+		background: #00bcd4;
+		color: #fff;
+		margin-bottom: .2rem;
+	}
+	.back {
+		width: .8rem;
+		text-align: center;	
+		margin-right: 1.85rem;
+		color: #fff;
+	}
+	.identity-list {
+		height: .96rem;
+		line-height: .96rem;
+		padding-left: .24rem;
+		border-bottom: .006rem solid #e0e0e0;
+	}
+</style>

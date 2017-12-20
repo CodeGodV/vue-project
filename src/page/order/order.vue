@@ -2,7 +2,9 @@
 	<div class="body">
 	<div class="scroll">
 		<header class="header">
-			<div class="back iconfont">&#xe624;</div>
+			<router-link to="/reserve">
+				<div class="back iconfont">&#xe624;</div>
+			</router-link>
 			<div class="orderInfo">订单填写</div>
 			<div class="login">登录</div>
 		</header>
@@ -13,7 +15,7 @@
 					</div>
 
 					<ul class="main-prod-infos">
-						<li class="prod-list"><img class="prod-img" src="https://img1.qunarzz.com/piao/fusion/1703/ac/1c9b308337e3f902.png" alt="">new Date().getTime()</li>
+						<li class="prod-list"><img class="prod-img" src="https://img1.qunarzz.com/piao/fusion/1703/ac/1c9b308337e3f902.png" alt="">Date.now()</li>
 						<li class="prod-list"><img class="prod-img" src="https://img1.qunarzz.com/piao/fusion/1703/bd/868afac58cdab802.png" alt="">{{prodInfo.condition}}</li>
 					</ul>
 
@@ -66,7 +68,7 @@
 					</p>
 					<p class="prod-user-infos">
 					<!-- <router-link to=""> -->
-						<label for="certificate" class="prod-countInfo" @click="handleCardsClick">身份证</label>
+						<label for="certificate" class="prod-countInfo" @click="handleCardsClick">{{identity}}</label>
 					<!-- </router-link> -->
 						<input type="text" class="prod-user-input" placeholder="请填写正确的身份证号码"  id="certificate">
 					</p>
@@ -88,7 +90,7 @@
 	</div>
 </template>
 <script>
-	export default{
+	export default {
 	  name: 'Order',
 	  data () {
 	    return {
@@ -96,14 +98,17 @@
 	      prodInfo: [],
 	      count: 1,
 	      show: false,
-	      totalPrice: 0
+	      totalPrice: 0,
+	      identity: '身份证'
 	    }
 	  },
 	  created () {
 	    this.getUserInfo()
 	  },
 	  mounted () {
-	    console.log(this.$route.params.identity)
+    if (this.$route.params.identity) {
+	      this.identity = this.$route.params.identity
+    }
 	  },
 	  methods: {
 	    handleProdAddFocus () {},
@@ -118,11 +123,19 @@
 	      this.totalPrice = this.prodInfo.price * this.count
 	    },
 	    handleUserInfoAdd () {
-	      this.count < 30 ? this.count++ : 30
+	      if (this.count < 30) {
+        this.count++
+	      } else {
+        this.count = 30
+	      }
 	      this.totalPrice = this.prodInfo.price * this.count
 	    },
 	    handleUserInfoMinus () {
-	      this.count > 1 ? this.count-- : 1
+	      if (this.count > 1) {
+        this.count--
+	      } else {
+        this.count = 1
+	      }
 	      this.totalPrice = this.prodInfo.price * this.count
 	    },
 	    handleDetailsClick () {
@@ -156,6 +169,7 @@
 		font-size: .32rem;
 	}
 	.back {
+		color: #fff;
 		width: .8rem;
 		text-align: center;
 		font-weight: 600;

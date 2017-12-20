@@ -165,6 +165,14 @@
 			"key": "0001",
 			"identity": "身份证",
 			"id": "identity-card"
+			},{
+			"key": "0002",
+			"identity": "护照",
+			"id": "passport"
+			},{
+			"key": "0003",
+			"identity": "港澳通行证",
+			"id": " exit-permit"
 			}]
 
 	}

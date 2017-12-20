@@ -15,8 +15,12 @@ export default new Router({
       component: Index
     },
     {
-      path: '/order',
+      path: '/order/:identity',
       name: 'Order',
+      component: Order
+    },
+    {
+      path: '/order',
       component: Order
     },
     {
