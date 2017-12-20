@@ -11,7 +11,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "better-scroll": "^1.6.0",
+=======
+>>>>>>> 171218-lee-project
     "fastclick": "^1.0.6",
     "vue": "^2.5.2",
     "vue-awesome-swiper": "2.6.7",

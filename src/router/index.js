@@ -8,6 +8,8 @@ import Identity from '@/page/order/identity.vue'
 import HongKong from '@/page/hongkong/hongkong.vue'
 import Reserve from '@/page/reserve/reserve.vue'
 import Skiing from '@/page/skiing/skiing.vue'
+import Search from '@/page/search/search.vue'
+import Acount from '@/page/acount/disacount.vue'
 
 Vue.use(Router)
 
@@ -54,5 +56,21 @@ export default new Router({
     path: '/skiing',
     name: 'skiing',
     component: Skiing
-  }]
+  },
+    {
+      path: '/',
+      name: 'index',
+      component: Index
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
+    },
+    {
+      path: '/acount',
+      name: 'acount',
+      component: Acount
+    }
+  ]
 })

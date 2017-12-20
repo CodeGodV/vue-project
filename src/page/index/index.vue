@@ -4,7 +4,7 @@
   		<div class="back iconfont">&#xe624;</div>
   		<div class="search"></div>
   		<div class="city">
-  			<a href="#">北京</a>
+  			<router-link to="/search">{{city}}</router-link>
   		</div>
   	</header>
   	<router-link to="/hongkong">
@@ -106,6 +106,7 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
 	import IndexRecommend from './recommend.vue'
 	export default {
 	  name: 'Index',
@@ -128,6 +129,10 @@
 	    }
 	  },
 	  computed: {
+      ...mapState(['city']),
+      city () {
+        return this.$store.getters.doubleCity
+      },
 	    pages () {
 	      const pages = []
 	      this.iconsInfo.forEach((item, index) => {
@@ -163,6 +168,7 @@
 	    this.getIndexData()
 	  }
 	}
+
 </script>
 
 <style scoped>
