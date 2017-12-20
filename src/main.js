@@ -10,6 +10,7 @@ import FastClick from 'fastclick'
 
 FastClick.attach(document.body)
 import store from './store/index'
+
 Vue.config.productionTip = false
 Vue.use(VueSwiper)
 Vue.use(VueResource)

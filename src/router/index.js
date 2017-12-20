@@ -26,34 +26,33 @@ export default new Router({
     component: Hotspring
   },
   {
-      path: '/',
-      name: 'index',
-      component: Index
-    },
-    {
-      path: '/order',
-      name: 'Order',
-      component: Order
-    },
-    {
-      path: '/identity',
-      name: 'Identity',
-      component: Identity
-    },
-    {
-      path: '/hongkong',
-      name: 'hongkong',
-      component: HongKong
-    },
-    {
-      path: '/reserve',
-      name: 'reserve',
-      component: Reserve
-    },
-    {
-      path: '/skiing',
-      name: 'skiing',
-      component: Skiing
-    }
-  ]
+    path: '/',
+    name: 'index',
+    component: Index
+  },
+  {
+    path: '/order',
+    name: 'Order',
+    component: Order
+  },
+  {
+    path: '/identity',
+    name: 'Identity',
+    component: Identity
+  },
+  {
+    path: '/hongkong',
+    name: 'hongkong',
+    component: HongKong
+  },
+  {
+    path: '/reserve',
+    name: 'reserve',
+    component: Reserve
+  },
+  {
+    path: '/skiing',
+    name: 'skiing',
+    component: Skiing
+  }]
 })

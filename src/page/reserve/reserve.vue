@@ -101,8 +101,6 @@
         } else {
           this.$refs.header.style.opacity = 0
         }
-        // console.log(this.scrolled)
-        
       },
       handelReserClick () {}
     },

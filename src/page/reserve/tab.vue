@@ -34,7 +34,7 @@
         } else {
           this.$refs.tab.style.position = ''
         }
-        if (this.$refs.scheduling.offsetTop <= this.scrolled){
+        if (this.$refs.scheduling.offsetTop <= this.scrolled) {
           this.$refs.item1.classList.add('tab-active')
         } else {
           this.$refs.item1.classList.remove('tab-active')
