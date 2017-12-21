@@ -66,9 +66,9 @@
 						<span>+86&gt;</span>
 						<input type="text" class="prod-user-input" placeholder="请填写手机号" id="phoneNumber">
 					</p>
-					<p class="prod-user-infos">
+					<p class="prod-user-infos"  @click="handleCardsClick">
 					<!-- <router-link to=""> -->
-						<label for="certificate" class="prod-countInfo" @click="handleCardsClick">{{identity}}</label>
+						<label for="certificate" class="prod-countInfo">{{identity}}</label>
 					<!-- </router-link> -->
 						<input type="text" class="prod-user-input" placeholder="请填写正确的身份证号码"  id="certificate">
 					</p>

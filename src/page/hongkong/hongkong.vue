@@ -17,7 +17,9 @@
 		</div>
 		
 		<div class="hongkong-nav">
-			<div class="back iconfont">&#xe624;</div>
+			<router-link to="/">
+				<div class="back iconfont">&#xe624;</div>
+			</router-link>
 			<div class="nav-title">香港迪士尼乐园</div>
 			<router-link to="/">
 				<div class="nav-backIndex">
@@ -330,6 +332,7 @@
 	.back, .nav-backIndex {
 		width: .88rem;
 		text-align: center;
+		color: #fff;
 	}
 	.nav-title {
 		font-size: .32rem;

@@ -1,0 +1,103 @@
+{
+  "ret": true,
+  "data": {
+    "ones": [{
+        "id": "0001",
+        "news":"【促销】鹧鸪山成人票",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/1609/e7/e7e9ae10e9c8d69fa3.water.jpg_292x181_378a771d.jpg",
+        "price":1
+     }, {
+        "id": "0002",
+        "news":"金银滩水上乐园滑雪场特惠票—单门票",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/1612/94/94ff7461b42935dea3.water.jpg_292x181_87b7bc89.jpg",
+        "price":1
+      }, {
+       "id": "0003",
+       "news":"【特惠】猪哈哈的农场特惠套餐（门票1张+动物草料1份）",
+       "imgUrl": "//img1.qunarzz.com/sight/p0/1412/9c/17641ef52e27226b0e20ba7c6f26df35.water.jpg_292x181_ebb2cc05.jpg",
+       "price":1
+      }, {
+        "id": "0004",
+        "news":"【秒杀】浙东十八潭景区成人票",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/1701/93/93bd239068da232aa3.img.png_292x181_e65cf97a.png",
+        "price":1
+      }, {
+       "id": "0005",
+       "news":"【秒杀】黄岩大瀑布成人票",
+       "imgUrl": "//img1.qunarzz.com/sight/p0/201301/15/ae66bf68fbb9f36993835fbb.jpg_292x181_44aaf3eb.jpg",
+       "price":1
+      }, {
+        "id": "0006",
+        "news":"豫西百草园成人观光门票",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/1705/9f/9fa0658dd5f466a7a3.img.jpg_292x181_baa22447.jpg",
+        "price":1
+      }, {
+        "id": "0007",
+        "news":"【省心之选】沙巴环滩岛度假村+kawa红树林+神山牧场三日游【【1元换购】拼车市区酒店24小时送机 A线】",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/1702/51/5144cda6cfd18b83a3.water.jpg_292x181_d61d9e93.jpg",
+        "price":1
+     }, {
+        "id": "0008",
+        "news":"【去哪儿专享】常州金鹰海洋世界儿童票（11.1-12.31）（限量100张售完为止）",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/201312/24/972e00b4cb40ffab325f7c693007fcd7.jpg_292x181_6b4e08f8.jpg",
+        "price":1
+      }, {
+       "id": "0009",
+       "news":"【去哪专享】【9元票】日月双塔成人票（提前1小时预订）",
+       "imgUrl": "//img1.qunarzz.com/sight/p0/201301/10/c1e68a6bf041aaf093835fbb.jpg_292x181_a6f44a2f.jpg",
+        "price":9.9
+      }, {
+        "id": "00010",
+        "news":"【去哪儿专享】南昌万达电影乐园（钟馗送亲）（2人起订）（9.9元）",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/1610/88/88ec04f6d021724da3.water.jpg_292x181_1bbd9a36.jpg",
+        "price":9.9
+      }, {
+        "id": "00011",
+        "news":"【限量抢购】【去哪专享】桂林动物园+虫虫游乐园成人票",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/201309/27/19e182490b28e7f9c8d65eac.jpg_292x181_91fca6ab.jpg",
+        "price":9.9
+     }],
+    "exempt": [{
+        "id": "0001",
+        "news":"八达岭长城成人票（淡季）",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_292x181_b11d4007.jpg",
+        "price":80
+     }, {
+        "id": "0002",
+        "news":"【上午场】故宫成人票凭身份证入园",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_292x181_5b79f0ee.jpg",
+        "price":120
+      }, {
+       "id": "0003",
+       "news":"【电子票 即买即用】北京颐和园成人票（13点半之前验票入园）",
+       "imgUrl": "//img1.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_292x181_89257425.jpg",
+       "price":160
+      }, {
+        "id": "0004",
+        "news":"北京欢乐谷日场-成人票（11.16-12.31）",
+        "imgUrl": "//img1.qunarzz.com/sight/p0/1508/a5/4003f9dd7bebf61eccbf64046e26d487.water.jpg_292x181_77bfe2a1.jpg",
+        "price":180
+      }],
+    "jewelry": [{
+        "id": "0001",
+        "news":"【当日票】故宫成人票",
+        "imgUrl": "//imgs.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_292x181_5b79f0ee.jpg",
+        "price":120
+     }, {
+        "id": "0002",
+        "news":"八达岭长城成人票",
+        "imgUrl": "//imgs.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_292x181_b11d4007.jpg",
+        "price":199
+      }, {
+       "id": "0003",
+       "news":"颐和园+园中园成人票",
+       "imgUrl": "//imgs.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_292x181_89257425.jpg",
+       "price":199
+      }, {
+        "id": "0004",
+        "news":"慕田峪长城成人票",
+        "imgUrl": "//imgs.qunarzz.com/sight/p0/1708/2b/2b6378fd3b2e1d86a3.img.jpg_292x181_0696db85.jpg",
+        "price":199
+      }]
+  }
+}
