@@ -44,7 +44,7 @@
 	
 	<div class="recommend">
 		<h3 class="recommend-title">热销推荐</h3>
-		<div v-for="recommends in recommendInfo" :key="recommends.id" class="recommend-count">
+		<div v-for="(recommends,index) in recommendInfo" :key="recommends.id" class="recommend-count"  @click="handClickPalace(recommends.id)">
 			<div class="address-img">
 				<img :src="recommends.imgUrl" alt="" />
 			</div>
@@ -171,8 +171,13 @@
 	        this.recommendInfo = body.data.recommend
 	        this.weekendInfo = body.data.weekends
 	      }
-	    }
-	  },
+	    },
+	    handClickPalace (id) {
+        if (id === '0001') {
+          this.$router.push({name: 'palace'})
+        }
+      }
+  },
 	  created () {
 	    this.getIndexData()
 	  }
