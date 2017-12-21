@@ -142,6 +142,38 @@
 			"imgUrl":"http://img1.qunarzz.com/sight/source/1511/ad/6834f95575feed.jpg_r_640x214_2b7039e2.jpg",
 			"title":"北京最美雪景",
 			"cont":"下雪了，你知道北京哪里最美吗"
-		}]
+		}],
+		"prodUserInfo":{
+			"id": "001",
+			"name": "游客",
+			"spell": "拼音",
+			"phoneNumber": "手机号",
+			"certificate": "证件"
+		},
+		"prodInfo":{
+			"id": "0001",
+			"title": "天安门故宫珍宝馆+八达岭+颐和园+恭王府联票无线耳麦人工讲解",
+			"condition": "条件退",
+			"ticket": "成人",
+			"meal": "不含餐",
+			"language": "中文",
+			"position": "【升级A】故宫 八达岭",
+			"time": "已过退款时间",
+			"price": "148"
+		},
+		"identityInfo":[{
+			"key": "0001",
+			"identity": "身份证",
+			"id": "identity-card"
+			},{
+			"key": "0002",
+			"identity": "护照",
+			"id": "passport"
+			},{
+			"key": "0003",
+			"identity": "港澳通行证",
+			"id": " exit-permit"
+			}]
+
 	}
 }
