@@ -23,6 +23,7 @@
 
 <script>
   export default {
+  	//这个时候应该用data将父组件的东西给重新初始化，避免子组件改变父组件的值
     props: ['recommendInfo']
   }
 </script>
