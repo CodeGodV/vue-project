@@ -59,29 +59,29 @@ export default new Router({
     name: 'skiing',
     component: Skiing
   },
-    {
-      path: '/',
-      name: 'index',
-      component: Index
-    },
-    {
-      path: '/palace',
-      name: 'palace',
-      component: Palace
-    },
-    {
-      path: '/winterOne',
-      name: 'winterOne',
-      component: WinterOne
-
-      path: '/search',
-      name: 'search',
-      component: Search
-    },
-    {
-      path: '/acount',
-      name: 'acount',
-      component: Acount
-    }
-  ]
+  {
+    path: '/',
+    name: 'index',
+    component: Index
+  },
+  {
+    path: '/palace',
+    name: 'palace',
+    component: Palace
+  },
+  {
+    path: '/winterOne',
+    name: 'winterOne',
+    component: WinterOne
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: Search
+  },
+  {
+    path: '/acount',
+    name: 'acount',
+    component: Acount
+  }]
 })
