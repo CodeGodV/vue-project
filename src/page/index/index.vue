@@ -32,6 +32,7 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
+<<<<<<< HEAD
   	<ul class="location-mes">
   		<li><a href="#" class="iconfont">&#xe600;定位失败</a></li>
   		<li><a href="#" class="iconfont" @click="handleClickLocation">&#xe62e;5折泡温泉</a></li>
@@ -102,6 +103,100 @@
   			<a href="#">意见反馈</a>
   		</div>
   	</div>
+=======
+    
+	<ul class="location-mes">
+		<li><a href="#" class="iconfont">&#xe600;定位失败</a></li>
+		<li><a href="#" class="iconfont">&#xe62e;5折跑温泉</a></li>
+	</ul>
+	
+	<ul class="special-offer">
+		<li v-for="(specials, index) in specialsInfo" :key="index">
+			<a href="#"><img :src="specials.specialsUrl" alt="" /></a>
+		</li>
+	</ul>
+	
+	<div class="recommend">
+		<h3 class="recommend-title">热销推荐</h3>
+		<div v-for="(recommends,index) in recommendInfo" :key="recommends.id" class="recommend-count"  @click="handClickPalace(recommends.id)">
+			<div class="address-img">
+				<img :src="recommends.imgUrl" alt="" />
+			</div>
+			<div class="describe">
+				<p>{{recommends.address}}</p>
+				<p>{{recommends.describe}}</p>
+				<p>
+					<span>￥</span>
+					<em class="price">{{recommends.price}}</em>
+					<span class="price-up">起</span>
+				</p>
+			</div>
+		</div>
+		<div class="recommend-look">
+			<a href="#">查看所有产品</a>
+		</div>
+	</div>
+	
+	<div class="weekend">
+		<h3 class="gowhere">周末去哪儿</h3>
+		<div v-for="weekends in weekendInfo" :key="weekends.id" class="weekend-cont">
+			<div class="weekend-img">
+				<img :src="weekends.imgUrl" alt="" />
+			</div>
+			<div class="weekend-describe">
+				<p>{{weekends.title}}</p>
+				<p>{{weekends.cont}}</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="remark">
+		<span class="iconfont">&#xe625;</span>
+		<div class="remark-cont">
+			<span>票面价</span>
+			是指通过景区指定窗口售卖的纸质门票上标注的价格
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="footer-more">
+			<ul>
+				<li>
+						<span class="iconfont">&#xe601;</span>
+						<a class="footer-w">飞机</a>
+				</li>
+				<li>
+					<span class="iconfont">&#xe61f;</span>
+					<a class="footer-w">酒店</a>
+				</li>
+				<li>
+					<span class="iconfont">&#xe63c;</span>
+					<a class="footer-w">公寓</a>
+				</li>
+				<li>	
+					<span class="iconfont">&#xe66c;</span>
+					<a class="footer-w">更多</a>
+				</li>
+			</ul>
+		</div>
+		<ul class="aboutus">
+			<li><a href="#">登录</a></li>
+			<li><a href="#">我的订单</a></li>
+			<li><a href="#">最近浏览</a></li>
+			<li><a href="#">关于我们</a></li>
+		</ul>
+		<div class="footer-type">
+			<a href="#">触屏版</a>
+			<a href="#">电脑版</a>
+		</div>
+		<div class="ideas">
+			<span>Qunar 京ICP备05021087</span>
+			<a href="#">意见反馈</a>
+		</div>
+	</div>
+	
+	
+>>>>>>> 171218-wly-palace
   </div>
 </template>
 
@@ -160,10 +255,19 @@
 	        this.weekendInfo = body.data.weekends
 	      }
 	    },
+<<<<<<< HEAD
 	    handleClickLocation () {
 	      this.$router.push('/hotspring')
 	    }
 	  },
+=======
+	    handClickPalace (id) {
+        if (id === '0001') {
+          this.$router.push({name: 'palace'})
+        }
+      }
+  },
+>>>>>>> 171218-wly-palace
 	  created () {
 	    this.getIndexData()
 	  }
