@@ -168,8 +168,7 @@
         if (id === '0001') {
           this.$router.push({name: 'palace'})
         }
-      }
-  },
+     },
 	  created () {
 	    this.getIndexData()
 	  }
