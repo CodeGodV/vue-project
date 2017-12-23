@@ -29,222 +29,157 @@
 			</router-link>
 		</div>
 		<div>
-			<div class="hongkong-banner"><img class="banner-img" src="https://img1.qunarzz.com/piao/fusion/1712/26/8e023c469106ea02.jpg_640x330_5c89ce09.jpg" alt=""></div>
-			<div>
-				<ul>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
+			<div class="hongkong-banner">
+			   <img class="banner-img" v-lazy="bannerImg" alt="">
 			</div>
 		</div>
 		<div class="main">
-			<div class="main-banner"><img class="main-banner-img"src="https://img1.qunarzz.com/piao/fusion/1712/d4/f8cf91f0b7cb902.png" alt=""></div>
+
+
+			<div class="main-banner">
+			   <img class="main-banner-img" v-lazy="mainBannerImg" alt="">
+			</div>
 			<div class="main-hotel">
-				<div class="main-hotel-item main-hotel-item-right">
+				<div class="main-hotel-item main-hotel-item-right" v-for="item in hotel" :key="item.id">
 					<div class="main-hotel-imgs">
-						<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/89/296ef52a08190602.jpg_298x235_dbc4c2da.jpg" alt="">	
+						<img class="main-hotel-img" v-lazy="item.imgUrl" alt="">	
 					</div>
-					<h3 class="item-title">迪士尼探索家度假酒店</h3>
+					<h3 class="item-title">{{item.title}}</h3>
 					<ul class="main-hotel-cons">
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+					<li class="item-list" v-for="itemlist in item.list" :key="itemlist.id">
+							<h4 class="item-name ellipsis">{{itemlist.priceCon}}</h4>
+							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">{{itemlist.price}}</span>起<span class="buy-state">{{itemlist.sale}}</span></div>
 						</li>
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>	
 					</ul>
 				</div>
-				<div class="main-hotel-item">
-					<div class="main-hotel-imgs">
-						<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/d0/5dcc359ebef74502.jpg_298x235_4002b15d.jpg" alt="">
+			</div>
+
+			<div class="item-hotel-con">
+				<div>
+					<div class="main-hotel-item main-hotel-item-con">
+						<div class="main-hotel-imgs">
+							<img class="main-hotel-img" v-lazy="hotelCon.imgUrl" alt="">
+						</div>
+						<h3 class="item-title">{{hotelCon.title}}</h3>
+						<ul class="main-hotel-cons">
+							<li class="item-list" v-for="item in hotelCon.list" :key="item.id">
+								<h4 class="item-name ellipsis">{{item.priceCon}}</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">{{item.price}}</span>起<span class="buy-state">{{item.sale}}</span></div>
+							</li>
+						</ul>
 					</div>
-					<h3 class="item-title">迪士尼好莱坞酒店</h3>
+				</div>
+			</div>
+				
+			
+			<div class="main-hotel">
+				<div class="main-hotel-item main-hotel-item-right" v-for="item in hotel" :key="item.id">
+					<div class="main-hotel-imgs">
+						<img class="main-hotel-img" v-lazy="item.imgUrl" alt="">	
+					</div>
+					<h3 class="item-title">{{item.title}}</h3>
 					<ul class="main-hotel-cons">
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+					<li class="item-list" v-for="itemlist in item.list" :key="itemlist.id">
+							<h4 class="item-name ellipsis">{{itemlist.priceCon}}</h4>
+							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">{{itemlist.price}}</span>起<span class="buy-state">{{itemlist.sale}}</span></div>
 						</li>
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>	
 					</ul>
+				</div>
+			</div>
+			
+			<div class="item-hotel-con">
+				<div>
+					<div class="main-hotel-item main-hotel-item-con">
+						<div class="main-hotel-imgs">
+							<img class="main-hotel-img" v-lazy="hotelCon.imgUrl" alt="">
+						</div>
+						<h3 class="item-title">{{hotelCon.title}}</h3>
+						<ul class="main-hotel-cons">
+							<li class="item-list" v-for="item in hotelCon.list" :key="item.id">
+								<h4 class="item-name ellipsis">{{item.priceCon}}</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">{{item.price}}</span>起<span class="buy-state">{{item.sale}}</span></div>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="item-hotel-con">
 				<div>
 					<div class="main-hotel-item main-hotel-item-con">
 						<div class="main-hotel-imgs">
-							<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/72/00ae2a869b53d802.jpg_604x267_325484ac.jpg" alt="">
+							<img class="main-hotel-img" v-lazy="hotelCon.imgUrl" alt="">
 						</div>
-						<h3 class="item-title">迪士尼好莱坞酒店</h3>
+						<h3 class="item-title">{{hotelCon.title}}</h3>
 						<ul class="main-hotel-cons">
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							<li class="item-list" v-for="item in hotelCon.list" :key="item.id">
+								<h4 class="item-name ellipsis">{{item.priceCon}}</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">{{item.price}}</span>起<span class="buy-state">{{item.sale}}</span></div>
 							</li>
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>	
 						</ul>
 					</div>
-				  </div>
-				</div>	
-				<div class="main-hotel">
-				<div class="main-hotel-item main-hotel-item-right">
-					<div class="main-hotel-imgs">
-						<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/89/296ef52a08190602.jpg_298x235_dbc4c2da.jpg" alt="">	
-					</div>
-					<h3 class="item-title">迪士尼探索家度假酒店</h3>
-					<ul class="main-hotel-cons">
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>	
-					</ul>
-				</div>
-				<div class="main-hotel-item">
-					<div class="main-hotel-imgs">
-						<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/d0/5dcc359ebef74502.jpg_298x235_4002b15d.jpg" alt="">
-					</div>
-					<h3 class="item-title">迪士尼好莱坞酒店</h3>
-					<ul class="main-hotel-cons">
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>
-						<li class="item-list">
-							<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-							<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-						</li>	
-					</ul>
 				</div>
 			</div>
 			<div class="item-hotel-con">
 				<div>
 					<div class="main-hotel-item main-hotel-item-con">
 						<div class="main-hotel-imgs">
-							<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/72/00ae2a869b53d802.jpg_604x267_325484ac.jpg" alt="">
+							<img class="main-hotel-img" v-lazy="hotelCon.imgUrl" alt="">
 						</div>
-						<h3 class="item-title">迪士尼好莱坞酒店</h3>
+						<h3 class="item-title">{{hotelCon.title}}</h3>
 						<ul class="main-hotel-cons">
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
+							<li class="item-list" v-for="item in hotelCon.list" :key="item.id">
+								<h4 class="item-name ellipsis">{{item.priceCon}}</h4>
+								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">{{item.price}}</span>起<span class="buy-state">{{item.sale}}</span></div>
 							</li>
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>	
 						</ul>
 					</div>
-				  </div>
 				</div>
-				<div class="item-hotel-con">
-				<div>
-					<div class="main-hotel-item main-hotel-item-con">
-						<div class="main-hotel-imgs">
-							<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/72/00ae2a869b53d802.jpg_604x267_325484ac.jpg" alt="">
-						</div>
-						<h3 class="item-title">迪士尼好莱坞酒店</h3>
-						<ul class="main-hotel-cons">
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>	
-						</ul>
-					</div>
-				  </div>
-				</div>	
-				<div class="item-hotel-con">
-				<div>
-					<div class="main-hotel-item main-hotel-item-con">
-						<div class="main-hotel-imgs">
-							<img class="main-hotel-img" src="https://img1.qunarzz.com/piao/fusion/1705/72/00ae2a869b53d802.jpg_604x267_325484ac.jpg" alt="">
-						</div>
-						<h3 class="item-title">迪士尼好莱坞酒店</h3>
-						<ul class="main-hotel-cons">
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>
-							<li class="item-list">
-								<h4 class="item-name ellipsis">标准客房单晚+2日门票*2</h4>
-								<div class="item-price"><span class="item-price-unit">&yen;</span><span class="item-prices">3490</span>起<span class="buy-state">已售罄</span></div>
-							</li>	
-						</ul>
-					</div>
-				  </div>
-				</div>	
-				<div class="copy-right">
-					<p class="copy-right-item"> 适用于迪士尼设计、标志及产物： </p>
-					<p class="copy-right-item"> ©Disney/Pixar ©Mattel, Inc. ©Hasbro, Inc. </p>
-					<p class="copy-right-item"> ©Disney/Lucasfilm Ltd. © &amp; TM Lucasfilm Ltd. </p>
-					<p class="copy-right-item"> ©2017 MARVEL </p>
-				</div>			
 			</div>
+
 		</div>
+					
+		<div class="copy-right">
+			<p class="copy-right-item"> 适用于迪士尼设计、标志及产物： </p>
+			<p class="copy-right-item"> ©Disney/Pixar ©Mattel, Inc. ©Hasbro, Inc. </p>
+			<p class="copy-right-item"> ©Disney/Lucasfilm Ltd. © &amp; TM Lucasfilm Ltd. </p>
+			<p class="copy-right-item"> ©2017 MARVEL </p>
+		</div>			
+	</div>
+</div>
 </template>
 <script>
- 	export default {
- 	  name: 'hongkong',
- 	  data () {
+export default {
+  name: 'hongkong',
+  data () {
     return {
- 	      show: true
+      show: true,
+      bannerImg: '',
+      mainBannerImg: '',
+      explorerHotel: [],
+      hotelCon: [],
+      hotel: []
     }
- 	  },
- 	  methods: {
+  },
+  methods: {
     handleCloseDownloadClick () {
- 	      this.show = !this.show
+      this.show = !this.show
+    },
+    getHongkongInfo () {
+      this.$http.get('/static/hongkong.json')
+        .then(this.handleGetHongkongInfoSucc.bind(this))
+    },
+    handleGetHongkongInfoSucc (res) {
+      const body = res.body
+      this.bannerImg = body.data.bannerPicUrl
+      this.mainBannerImg = body.data.mainBannerImgUrl
+      this.hotel = body.data.hotel
+      this.hotelCon = body.data.hotelCon
     }
- 	  }
- 	}
+  },
+  created () {
+    this.getHongkongInfo()
+  }
+}
 </script>
 <style scoped>
 	.ellipsis {
@@ -443,6 +378,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		background: #ffdb5c;
 	}
 	.copy-right-item {
 		color: #5d390b;

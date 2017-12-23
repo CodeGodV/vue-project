@@ -15,7 +15,7 @@
 					</div>
 
 					<ul class="main-prod-infos">
-						<li class="prod-list"><img class="prod-img" src="https://img1.qunarzz.com/piao/fusion/1703/ac/1c9b308337e3f902.png" alt="">Date.now()</li>
+						<li class="prod-list"><img class="prod-img" src="https://img1.qunarzz.com/piao/fusion/1703/ac/1c9b308337e3f902.png" alt="">12-13</li>
 						<li class="prod-list"><img class="prod-img" src="https://img1.qunarzz.com/piao/fusion/1703/bd/868afac58cdab802.png" alt="">{{prodInfo.condition}}</li>
 					</ul>
 
