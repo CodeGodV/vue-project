@@ -40,13 +40,95 @@
 					<span class="coupon-get">立即领取</span>
 				</div>
 			</div>
+			
+			<ul class="select-title">
+				<li v-for="item in titleInfo" :key="item.id">
+					<span class="title-cont">{{item.title}}</span>
+				</li>
+			</ul>
+			
+			<div class="worth-hots">
+				<h2 class="title">超值温泉</h2>
+				<p class="introduce">{{worthRecommend}}</p>
+				<div v-for="item in worthInfo" :key="item.id" class="worth-cont">
+					<div class="img-box">
+						<img :src="item.imgUrl" alt="" />
+					</div>
+					<div class="connected">
+						<p class="cont-title">{{item.title}}</p>
+						<div class="cont-recommend">
+							<div v-for="items in item.decs">
+								<span :class="items.id">{{items.recommend}}</span>
+							</div>
+						</div>
+						<div class="cont-price">
+							<div v-for="items in item.price">
+								<span class="mark">￥</span>
+								<span class="current">{{items.cost}}</span>
+								<span class="original">{{items.prices}}</span>
+							</div>
+						</div>
+						<div class="cont-grab">
+							<span>马上抢</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="">
+				<h2></h2>
+				<ul>
+					<li v-for="item in listInfo" :key="item.id">
+						<span>{{item.recommend}}</span>
+					</li>
+				</ul>
+				<p></p>
+				<div v-for="">
+					<div class="img-box">
+						<img src="" alt="" />
+					</div>
+					<p></p>
+					<div>
+						<span></span>
+						<span v-for="">{{}}</span>
+						<div>
+							<span>￥</span>
+							<span>{{}}</span>
+						</div>
+					</div>
+					<p></p>
+				</div>
+			</div>
 		</section>
 		<footer></footer>
 	</div>
 </template>
 
 <script>
-	export default {}
+	export default {
+		name: 'hotspring',
+		data () {
+			return {
+				titleInfo: [],
+				worthInfo: [],
+				worthRecommend: ''
+			}
+		},
+		mounted () {
+			this.getHotSpring()
+		},
+		methods: {
+			getHotSpring () {
+				this.$http.get('/static/hotspring.json')
+				.then(this.handleSuccAjax.bind(this))				
+			},
+			handleSuccAjax (res) {
+				this.titleInfo = res.body.data.title
+				this.worthInfo = res.body.data.worth
+				this.worthRecommend = res.body.data.worthRecommend
+			}
+		}
+	}
 </script>
 
 <style scoped>
@@ -91,12 +173,12 @@
   .title-img {
   	position: relative;
   }
-  .img-box {
+  .title-img .img-box {
 	height: 0; 
 	padding-bottom: 56.25%;
 	width: 100%;
   }
-  .img-box img {
+  .title-img .img-box img {
 	width: 100%;
   }
   .describe {
@@ -213,5 +295,126 @@
     height: .3rem;
     background: #fff;
     border-radius: 50%;
+  }
+  .select-title {
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	padding: .4rem .5rem;
+  	background: #fff;
+  }
+  .select-title li {
+  	display: flex;
+  	box-sizing: border-box;
+  	width: 33.33%;
+  	margin-bottom: .2rem;
+  	justify-content: center;
+  }
+  .select-title span {
+  	line-height: .64rem;
+  	width: 100%;
+  	text-align: center;
+  	color: #1d1d1d;
+  	border: .02rem solid #ccc;
+  	position: relative;
+  }
+  .select-title span:after {
+    transform: scale(.5);
+    top: 0;
+    left: 0;
+    border: 1px solid #e0e0e0;
+    content: "\0020";
+    overflow: hidden;
+    position: absolute;
+  }
+  .worth-hots {
+  	background: #fff;
+  	margin-bottom: .2rem;
+  }
+  .worth-hots .title {
+  	line-height: .5rem;
+  	color: #fa5a1c;
+  	font-size: .5rem;
+  	text-align: center;
+  	margin-bottom: .3rem;
+  }
+  .worth-hots .introduce {
+  	line-height: .6rem;
+  	color: #5b5b5b;
+  	font-size: .35rem;
+  	padding: 0 .5rem;
+  }
+  .worth-cont {
+  	display: flex;
+  	padding: .2rem .2rem;
+  }
+  .worth-hots .img-box {
+  	width: 2rem;
+  	height: 1.8rem;
+  	margin-right: 0.2rem;
+  }
+  .worth-hots .img-box img {
+  	width: 100%;
+  	height: 100%;
+  }
+  .worth-hots .connected {
+  	flex: 1;
+  	display: flex;
+  	flex-direction: column;
+  	position: relative;
+  	justify-content: space-around;
+  }
+  .connected .cont-title {
+  	color: #212121;
+  	font-weight: 900;
+  	font-size: .32rem;
+	line-height: .38rem;
+	overflow: hidden;
+	height: .76rem;
+  }
+  .cont-recommend {
+  	display: flex;
+  }
+  .cont-recommend span {
+  	line-height: .4rem;
+  }
+  .cont-recommend .one {
+  	color: #ff8300;
+  	font-size: .15rem;
+  	padding-right: 0.2rem;
+  	border-right: .01rem solid #ccc;
+  } 
+  .cont-recommend .two {
+  	color: #04b5e1;
+  	font-size: .15rem;
+  	padding-left: .2rem;
+  }
+  .cont-price {
+  	display: flex;
+  }
+  .cont-price .mark {
+  	color: #ff8300;
+    font-size: .24rem;
+  }
+  .cont-price .current {
+  	font-size: .4rem;
+  	color: #ff8300;
+  }
+  .cont-price .original {
+  	color: #616161;
+    font-size: .24rem;
+    text-decoration: line-through;	
+  }
+  .cont-grab {
+  	position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1.1rem;
+    background: #ff8300;
+    color: #fff;
+    font-size: .28rem;
+    line-height: .56rem;
+    text-align: center;
+    border-radius: .04rem; 
   }
 </style>

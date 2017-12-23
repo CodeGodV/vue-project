@@ -1,0 +1,38 @@
+{
+	"ret":true,
+	"data":{
+		"title":[{
+			"id":"01",
+			"title":"超值温泉"
+		},{
+			"id":"02",
+			"title":"山水温泉"
+		},{
+			"id":"03",
+			"title":"养生温泉"
+		},{
+			"id":"04",
+			"title":"亲子温泉"
+		},{
+			"id":"05",
+			"title":"省心一日游"
+		},{
+			"id":"06",
+			"title":"温泉贴士"
+		}],
+		"worthRecommend":"近千家温泉逐一甄选。价格不高，格调很高；水质、水温、环境、路途、服务...想你所想，为你所选!",
+		"worth":[{
+			"id":"01",
+			"imgUrl":"//img1.qunarzz.com/sight/p0/1507/d5/a9c70a3b26bd90e2e9274eae72ae6727.water.jpg_200x180_ddf33dd2.jpg",
+			"title":"【特权日】北京九华温泉文化主题公园- 晚场温泉票（17:00-23:00使用）",
+			"decs":[{"id":"one","recommend":"露天温泉"},{"id":"two","recommend":"温柔之乡"}],
+			"price":[{"cost":"87","prices":"票面价¥300"}]
+		},{
+			"id":"02",
+			"imgUrl":"//img1.qunarzz.com/sight/p0/201303/04/50b65ba27d711f92c8d65eac.jpg_200x180_19d66131.jpg",
+			"title":"北京红栌山庄温泉门票",
+			"decs":[{"id":"one","recommend":"儿童乐园"},{"id":"two","recommend":"性价比高"}],
+			"price":[{"cost":"80","prices":"票面价¥208"}]
+		}]
+	}
+}
