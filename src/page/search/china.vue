@@ -32,9 +32,7 @@ export default {
     }
   },
   methods: {
-    handleJumpClick (number) {
-      
-    },
+    handleJumpClick (number) {},
     handleCityChange (city) {
       this.$store.commit('changeCity', city)
     }

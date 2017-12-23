@@ -36,15 +36,12 @@
   		<li><a href="#" class="iconfont">&#xe600;定位失败</a></li>
   		<li><a href="#" class="iconfont" @click="handleClickLocation">&#xe62e;5折泡温泉</a></li>
   	</ul>
-  	
   	<ul class="special-offer">
   		<li v-for="(specials, index) in specialsInfo" :key="index">
   			<a href="#"><img :src="specials.specialsUrl" alt="" /></a>
   		</li>
   	</ul>
-  	
   	<index-recommend :recommendInfo="recommendInfo"></index-recommend>
-  	
   	<div class="weekend">
   		<h3 class="gowhere">周末去哪儿</h3>
   		<div v-for="weekends in weekendInfo" :key="weekends.id" class="weekend-cont">
@@ -57,7 +54,6 @@
   			</div>
   		</div>
   	</div>
-  	
   	<div class="remark">
   		<span class="iconfont">&#xe625;</span>
   		<div class="remark-cont">
@@ -65,7 +61,6 @@
   			是指通过景区指定窗口售卖的纸质门票上标注的价格
   		</div>
   	</div>
-  	
   	<div class="footer">
   		<div class="footer-more">
   			<ul>
@@ -107,73 +102,72 @@
 
 <script>
   import { mapState } from 'vuex'
-	import IndexRecommend from './recommend.vue'
-	export default {
-	  name: 'Index',
-	  components: {
-	    IndexRecommend
-	  },
-	  data () {
-	    return {
-	      swiperInfo: [],
-	      iconsInfo: [],
-	      specialsInfo: [],
-	      recommendInfo: [],
-	      weekendInfo: [],
-	      swiperOption: {
-	        autoplay: 5000,
-	        direction: 'horizontal',
-	        pagination: '.swiper-pagination',
-	        loop: true
-	      }
-	    }
-	  },
-	  computed: {
+  import IndexRecommend from './recommend.vue'
+  export default {
+    name: 'Index',
+    components: {
+      IndexRecommend
+    },
+    data () {
+      return {
+        swiperInfo: [],
+        iconsInfo: [],
+        specialsInfo: [],
+        recommendInfo: [],
+        weekendInfo: [],
+        swiperOption: {
+          autoplay: 5000,
+          direction: 'horizontal',
+          pagination: '.swiper-pagination',
+          loop: true
+        }
+      }
+    },
+    computed: {
       ...mapState(['city']),
       city () {
         return this.$store.getters.doubleCity
       },
-	    pages () {
-	      const pages = []
-	      this.iconsInfo.forEach((item, index) => {
-	        let page = Math.floor(index / 8)
-	        if (!pages[page]) {
-	          pages[page] = []
-	        }
-	        pages[page].push(item)
-	      })
-	      return pages
-	    }
-	  },
-	  methods: {
-	    getIndexData () {
-	      this.$http.get('/static/index.json')
-	        .then(this.handleAjaxSucc.bind(this))
-	    },
-	    handleAjaxSucc (res) {
-	      var body = res.body
-	      if (body.data && body && body.data.swiper) {
-	        this.swiperInfo = res.body.data.swiper
-	        this.iconsInfo = body.data.icons
-	        this.specialsInfo = body.data.specials
-	        this.recommendInfo = body.data.recommend
-	        this.weekendInfo = body.data.weekends
-	      }
-	    },
-	    handleClickLocation () {
-	      this.$router.push('/hotspring')
-	    }
-	  },
-	    handClickPalace (id) {
+      pages () {
+        const pages = []
+        this.iconsInfo.forEach((item, index) => {
+          let page = Math.floor(index / 8)
+          if (!pages[page]) {
+            pages[page] = []
+          }
+          pages[page].push(item)
+        })
+        return pages
+      }
+    },
+    methods: {
+      getIndexData () {
+        this.$http.get('/static/index.json')
+          .then(this.handleAjaxSucc.bind(this))
+      },
+      handleAjaxSucc (res) {
+        var body = res.body
+        if (body.data && body && body.data.swiper) {
+          this.swiperInfo = res.body.data.swiper
+          this.iconsInfo = body.data.icons
+          this.specialsInfo = body.data.specials
+          this.recommendInfo = body.data.recommend
+          this.weekendInfo = body.data.weekends
+        }
+      },
+      handleClickLocation () {
+        this.$router.push('/hotspring')
+      },
+      handClickPalace (id) {
         if (id === '0001') {
           this.$router.push({name: 'palace'})
         }
-     },
-	  created () {
-	    this.getIndexData()
-	  }
-	}
-
+      }
+    },
+    created () {
+      this.getIndexData()
+    }
+  }
 </script>
 
 <style scoped>

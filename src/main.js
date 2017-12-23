@@ -8,8 +8,6 @@ import './assets/iconfont1/iconfont.css'
 import VueSwiper from 'vue-awesome-swiper'
 import VueResource from 'vue-resource'
 import FastClick from 'fastclick'
-
-FastClick.attach(document.body)
 import store from './store/index'
 
 FastClick.attach(document.body)

@@ -67,7 +67,7 @@
           <p class="comments-info-eval">不错，挺靠谱的，服务也不错，</p>
         </div>
       </div>
-      <tab-reserve ref="tab"></tab-reserve>
+      <tab-reserve></tab-reserve>
       <more-price></more-price>
       <div class="footer">
         <div class="footer-left">
