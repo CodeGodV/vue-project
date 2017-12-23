@@ -107,73 +107,72 @@
 
 <script>
   import { mapState } from 'vuex'
-	import IndexRecommend from './recommend.vue'
-	export default {
-	  name: 'Index',
-	  components: {
-	    IndexRecommend
-	  },
-	  data () {
-	    return {
-	      swiperInfo: [],
-	      iconsInfo: [],
-	      specialsInfo: [],
-	      recommendInfo: [],
-	      weekendInfo: [],
-	      swiperOption: {
-	        autoplay: 5000,
-	        direction: 'horizontal',
-	        pagination: '.swiper-pagination',
-	        loop: true
-	      }
-	    }
-	  },
-	  computed: {
+  import IndexRecommend from './recommend.vue'
+  export default {
+    name: 'Index',
+    components: {
+      IndexRecommend
+    },
+    data () {
+      return {
+        swiperInfo: [],
+        iconsInfo: [],
+        specialsInfo: [],
+        recommendInfo: [],
+        weekendInfo: [],
+        swiperOption: {
+          autoplay: 5000,
+          direction: 'horizontal',
+          pagination: '.swiper-pagination',
+          loop: true
+        }
+      }
+    },
+    computed: {
       ...mapState(['city']),
       city () {
         return this.$store.getters.doubleCity
       },
-	    pages () {
-	      const pages = []
-	      this.iconsInfo.forEach((item, index) => {
-	        let page = Math.floor(index / 8)
-	        if (!pages[page]) {
-	          pages[page] = []
-	        }
-	        pages[page].push(item)
-	      })
-	      return pages
-	    }
-	  },
-	  methods: {
-	    getIndexData () {
-	      this.$http.get('/static/index.json')
-	        .then(this.handleAjaxSucc.bind(this))
-	    },
-	    handleAjaxSucc (res) {
-	      var body = res.body
-	      if (body.data && body && body.data.swiper) {
-	        this.swiperInfo = res.body.data.swiper
-	        this.iconsInfo = body.data.icons
-	        this.specialsInfo = body.data.specials
-	        this.recommendInfo = body.data.recommend
-	        this.weekendInfo = body.data.weekends
-	      }
-	    },
-	    handleClickLocation () {
-	      this.$router.push('/hotspring')
-	    }
-	  },
-	    handClickPalace (id) {
+      pages () {
+        const pages = []
+        this.iconsInfo.forEach((item, index) => {
+          let page = Math.floor(index / 8)
+          if (!pages[page]) {
+            pages[page] = []
+          }
+          pages[page].push(item)
+        })
+        return pages
+      }
+    },
+    methods: {
+      getIndexData () {
+        this.$http.get('/static/index.json')
+          .then(this.handleAjaxSucc.bind(this))
+      },
+      handleAjaxSucc (res) {
+        var body = res.body
+        if (body.data && body && body.data.swiper) {
+          this.swiperInfo = res.body.data.swiper
+          this.iconsInfo = body.data.icons
+          this.specialsInfo = body.data.specials
+          this.recommendInfo = body.data.recommend
+          this.weekendInfo = body.data.weekends
+        }
+      },
+      handleClickLocation () {
+        this.$router.push('/hotspring')
+      },
+      handClickPalace (id) {
         if (id === '0001') {
           this.$router.push({name: 'palace'})
         }
-     },
-	  created () {
-	    this.getIndexData()
-	  }
-	}
-
+      }
+    },
+    created () {
+      this.getIndexData()
+    }
+  }
 </script>
 
 <style scoped>
