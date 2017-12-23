@@ -2,7 +2,7 @@
     <div>
         <div class="headerCon">
             <div class="header">    
-                <router-link to="">
+                <router-link to="/">
                     <span class="header-back iconfont">&#xe624;</span>
                 </router-link>
                 <div class="mp-header-title">
@@ -14,7 +14,12 @@
             </div>
         </div>
         <div class="write">
-            <input type="text" class="writeIn" placeholder="输入城市名或拼音" ref="input" @focus="handleInputChange" @blur="handleInputBack">
+            <input type="text" class="writeIn" placeholder="输入城市名或拼音" ref="input" @focus="handleInputChange" @blur="handleInputBack" v-model="listcon">
+        </div>
+        <div class="search" v-if="Listflag">
+          <router-link to="/">
+            <li class="seachlist" v-for="item in getListData" @click="handleChangeCity(item)">{{item}}</li>
+          </router-link>
         </div>
         <div class="mp-cityarea-group">
             <div class="mp-cityarea-title">您的位置</div>
@@ -37,6 +42,9 @@ export default {
       flag: true,
       Chinaflag: true,
       Foreignflag: false,
+      Listflag: false,
+      listcon: '',
+      citydata: '',
       cityInfo: [],
       chinaCityInfo: [],
       citywaiInfo: [],
@@ -47,6 +55,21 @@ export default {
     HotCity,
     PopCity
   },
+  computed: {
+    getListData () {
+      const finddata = []
+      this.citydata = this.Chinaflag ? this.chinaCityInfo : this.chinawaiCityInfo
+      this.citydata.forEach((value, index) => {
+        value.address.forEach((value, index) => {
+          let reg = new RegExp(this.listcon, 'g')
+          if (reg.test(value.name)) {
+            finddata.push(value.name)
+          }
+        })
+      })
+      return finddata
+    }
+  },
   methods: {
     handleChinaData: function (e) {
       this.china = true
@@ -54,6 +77,8 @@ export default {
       this.Chinaflag = true
       this.Foreignflag = false
       this.getIndexData()
+      this.$refs.input.value = ''
+      this.$refs.input.placeholder = '输入城市名或拼音'
     },
     handleForeignData: function (e) {
       this.china = false
@@ -61,6 +86,8 @@ export default {
       this.Chinaflag = false
       this.Foreignflag = true
       this.getIndexData()
+      this.$refs.input.value = ''
+      this.$refs.input.placeholder = 'please write down city'
     },
     getIndexData () {
       this.$http.get('/static/search.json')
@@ -83,10 +110,22 @@ export default {
     handleInputBack: function () {
       this.$refs.input.placeholder = '输入城市名或拼音'
       this.$refs.input.style.textAlign = 'center'
+    },
+    handleChangeCity: function (city) {
+      this.$store.commit('changeCity', city)
     }
   },
   created () {
     this.getIndexData()
+  },
+  watch: {
+    listcon () {
+      if (this.listcon) {
+        this.Listflag = true
+      } else {
+        this.Listflag = false
+      }
+    }
   }
 }
 </script>
@@ -145,6 +184,21 @@ export default {
         height: .6rem;
         border-radius: 0.1rem;
         text-align: center;
+    }
+    .search{
+      position: absolute;
+      width: 100%;
+      background: #f5f5f5;
+      top: 1.7rem;
+      z-index: 10;
+    }
+    .seachlist{
+      list-style: none;
+      height: .76rem;
+      line-height: .76rem;
+      padding-left: .2rem;
+      color: #212121;
+      border-bottom: 0.01rem solid #ccc;
     }
     .mp-cityarea-title{
         height: .54rem;

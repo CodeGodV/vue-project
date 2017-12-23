@@ -3,15 +3,19 @@
   <div class="popularCity">
     <div class="popCityTitle">热门城市</div>
     <div class="popCityCon">
-      <a class="popCity" v-for="item in citywaiInfo" :key="item.id">{{item.name}}</a>
+      <router-link to="/">
+        <a class="popCity" v-for="item in citywaiInfo" :key="item.id" @click="handleCityPos(item.name)">{{item.name}}</a>
+      </router-link>
     </div>
   </div>
-  <div class="city" v-for="item in chinawaiCityInfo">
-    <li class="cityNum">{{item.number}}</li>
-    <li class="cityList" v-for="items in item.address">{{items.name}}</li>
+  <div class="city" v-for="(item, index) in chinawaiCityInfo">
+    <li class="cityNum" ref="li">{{item.number}}</li>
+    <router-link to='/'>
+      <li class="cityList" v-for="items in item.address" @click="handleCityChange(items.name)">{{items.name}}</li>
+    </router-link>
   </div>
-  <div class="letters">
-    <li v-for="item in chinawaiCityInfo" :key="item.id">{{item.number}}</li>
+  <div class="letters" ref="number">
+    <li v-for="(item, index) in chinawaiCityInfo" :key="item.id" @click="handleJumpClick(index)">{{item.number}}</li>
   </div>
 </div>
 </template>
@@ -23,6 +27,17 @@ export default {
     },
     chinawaiCityInfo: {
       type: Array
+    }
+  },
+  methods: {
+    handleJumpClick (index) {
+      document.documentElement.scrollTop = this.$refs.li[index].offsetTop - 44
+    },
+    handleCityChange (city) {
+      this.$store.commit('changeCity', city)
+    },
+    handleCityPos: function (city) {
+      this.$store.commit('changeCity', city)
     }
   }
 }
