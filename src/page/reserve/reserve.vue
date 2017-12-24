@@ -1,7 +1,9 @@
 <template>
   <div>
     <header class="header" ref="header">
-      <a class="header-back iconfont" href="#">&#xe624;</a>
+      <router-link to='./'>
+        <a class="header-back iconfont" href="javascript:;">&#xe624;</a>
+      </router-link>
       <h1 class="header-center">天安门故宫珍宝馆+八达岭+颐和园+恭王府联票无线耳麦人工讲解</h1>
     </header>
     <div class="main">
@@ -13,63 +15,11 @@
           <span class="banner-infocon-right">蓝森国旅</span>
         </div>
       </div>
-      <div class="prdcard">
-        <h3 class="prdcard-name">天安门故宫珍宝馆+八达岭+颐和园+恭王府联票无线耳麦人工讲解</h3>
-        <div class="prdcard-price">
-          <em class="prdcard-price-icon">&yen;</em>
-          <span class="prdcard-price-text">27</span>
-          <span class="prdcard-price-gray">起</span>
-          <span class="prdcard-price-info">可定明日</span>
-          <span class="prdcard-price-sold">已售：40</span>
-        </div>
-        <div class="prdcard-tagcon">
-          <div class="prdcard-tag-item">
-            <i class="iconfont prdcard-tag-icon">&#xe610;</i>
-            <span class="prdcard-tag-desc">条件退</span>
-          </div>
-          <div class="prdcard-tag-item">
-            <i class="iconfont prdcard-tag-icon">&#xe610;</i>
-            <span class="prdcard-tag-desc">铁定成团</span>
-          </div>
-          <div class="prdcard-tag-item">
-            <i class="iconfont prdcard-tag-icon">&#xe610;</i>
-            <span class="prdcard-tag-desc">无自费</span>
-          </div>
-          <div class="prdcard-tag-item">
-            <i class="iconfont prdcard-tag-icon">&#xe610;</i>
-            <span class="prdcard-tag-desc">无购物</span>
-          </div>
-        </div>
-      </div>
-      <div class="comments">
-        <a href="#">
-          <span class="comments-score">5.0</span>
-          <span class="comments-text">分</span>
-          <span class="comments-desc">非常满意</span>
-          <span class="comments-totalnum">
-            2条评论
-            <span class="iconfont comments-icon">&#xe604;</span>
-          </span>
-        </a>
-      </div>
-      <div class="comments-info">
-        <div class="comments-info-item">
-          <div class="comments-info-level">
-            <div class="comments-info-left">
-              <i class="iconfont comments-info-icon">&#xe644;</i>
-              <i class="iconfont comments-info-icon">&#xe644;</i>
-              <i class="iconfont comments-info-icon">&#xe644;</i>
-              <i class="iconfont comments-info-icon">&#xe644;</i>
-              <i class="iconfont comments-info-icon">&#xe644;</i>
-            </div>
-            <span class="comments-info-right">k*4  2017-12-04</span>
-          </div>
-          <p class="comments-info-eval">不错，挺靠谱的，服务也不错，</p>
-        </div>
-      </div>
-      <tab-reserve ref="tab"></tab-reserve>
+      <prd-card></prd-card>
+      <comment-info></comment-info>
+      <tab-reserve></tab-reserve>
       <more-price></more-price>
-      <div class="footer">
+      <div class="footer" ref='footer' v-show='footer'>
         <div class="footer-left">
           <i class="iconfont footer-icon">&#xe626;</i>
           <span class="footer-text">咨询</span>
@@ -77,7 +27,7 @@
         <div class="footer-right" @click="handelReserClick"><a class="footer-btn" href="javascript:;">立即预订</a></div>
       </div>
     </div>
-    <option-reserve></option-reserve>
+    <option-reserve ref='option' v-show='option'></option-reserve>
   </div>
 </template>
 
@@ -85,13 +35,22 @@
   import OptionReserve from './option'
   import TabReserve from './tab'
   import MorePrice from './moreprice'
+  import PrdCard from './prdcard'
+  import CommentInfo from './comments'
   export default {
     name: 'Reserve',
-
     components: {
       OptionReserve,
       TabReserve,
-      MorePrice
+      MorePrice,
+      PrdCard,
+      CommentInfo
+    },
+    data () {
+      return {
+        footer: true,
+        option: false
+      }
     },
     methods: {
       handleScroll () {
@@ -102,7 +61,10 @@
           this.$refs.header.style.opacity = 0
         }
       },
-      handelReserClick () {}
+      handelReserClick () {
+        this.footer = false
+        this.option = true
+      }
     },
     mounted () {
       window.addEventListener('scroll', this.handleScroll)
@@ -188,185 +150,9 @@
     float: right;
     margin-right: 0.2rem;
   }
-  .prdcard{
-    height:2.42rem;
-    position: relative;
-    margin-top: -0.1rem;
-    padding: 0.2rem 0.2rem 0 0.2rem;
-    border-radius: 0.1rem 0.1rem 0 0;
-    background: #fff;
-  }
-  .prdcard-name{
-    overflow: hidden;
-    line-height: .44rem;
-    text-overflow: ellipsis;
-    font-size: .36rem;
-    color: #212121;
-  }
-  .prdcard-price{
-    height: 0.48rem;
-    overflow: hidden;
-    margin: 0.16rem 0; 
-  }
-  .prdcard-price-icon{
-    font-size: 0.24rem;
-    color: #ff8300;
-  }
-  .prdcard-price-text{
-    font-size: .48rem;
-    color: #ff8300;
-  }
-  .prdcard-price-gray{
-    font-size: .24rem;
-    color: #9e9e9e;
-  }
-  .prdcard-price-info{
-    margin-left: .2rem;
-    font-size: .24rem;
-    color: #616161;
-  }
-  .prdcard-price-sold{
-    float: right;
-    height: .24rem;
-    margin-top: .2rem;
-    color: #616161;
-  }
-  .prdcard-tagcon{
-    overflow: hidden;
-    padding-bottom: 0.2rem;
-    font-size: 0;
-  }
-  .prdcard-tag-item{
-    float: left;
-    height: 0.34rem;
-    margin-right: 0.2rem;
-    font-size: 0.24rem;
-    line-height: 0.34rem;
-  }
-  .prdcard-tag-desc{
-    color: #616161;
-  }
-  .prdcard-tag-icon{
-    margin-right: 0.04rem;
-    font-size: .28rem;
-    color: #00afc7;
-  }
-  .comments{
-    height: 0.8rem;
-    line-height: 0.8rem;
-    position: relative;
-    border-top: 0.2rem solid #f5f5f5;
-    padding-top: 0.02rem;
-    background-color: #fff;
-  }
-  .comments-score{
-    font-size: 0.36rem;
-    margin-left: 0.2rem;
-    color: #ff8300;
-  }
-  .comments-text{
-    font-size: .24rem;
-    color: #ff8300;
-  }
-  .comments-desc{
-    margin-left: 0.1rem;
-    font-size: 0.24rem;
-    color: #ff8300;
-  }
-  .comments-totalnum{
-    float: right;
-    margin-left: 0.16rem;
-    margin-right: 0.2rem;
-    font-size: .24rem;
-    color: #616161;
-  }
-  .comments-icon{
-    font-size: 0.24rem;
-    color: #9e9e9e;
-  }
-  .comments-info{
-    padding: 0 0.2rem;
-    background-color: #fff;
-    z-index: 99;
-  }
-  .comments-info::before{
-    content: "";
-    overflow: hidden;
-    position: absolute;
-    width: 95%;
-    border-top: 1px solid #e0e0e0;
-  }
-  .comments-info-item{
-    padding: 0.2rem 0;
-  }
-  .comments-info-level{
-    height: 0.32rem;
-    font-size: 0.2rem;
-  }
-  .comments-info-left{
-    color:#ffb436;
-    float: left;
-  }
-  .comments-info-icon{
-    font-size: 0.2rem;
-  }
-  .comments-info-right{
-    float: right;
-    font-size: 0.24rem;
-  }
-  .comments-info-eval{
-    display: -webkit-box;
-    font-size: 0.24rem;
-    margin-top: 0.1rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    color: #212121;
-  }
-  .tab{
-    width: 100%;
-    border-top: 0.2rem solid #f5f5f5;
-    background-color: #fff;
-  }
-  .tab-group{
-    display: flex;
-    position: relative;
-  }
-  .tab-group-item{
-    flex: 1;
-    float: left;
-    text-align: center;
-    height: 0.4rem;
-    padding: 0.2rem 0;
-  }
-  .tab-active{
-    border-bottom: 0.04rem solid #00afc7;
-    color: #00afc7;
-  }
-  .tab-group::after{
-    content: "";
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  .scheduling{
-    height:11rem;
-    background: yellow;
-  }
-  .costlist{
-    height:11rem;
-    background: red;
-  }
-  .instructions{
-    height:11rem;
-    background: green;
-  }
   .footer{
     position: fixed;
-    z-index: 82;
+    z-index: 1;
     bottom: 0;
     left: 0;
     width: 100%;

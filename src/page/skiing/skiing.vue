@@ -11,13 +11,16 @@
         首页
       </a>
     </div>
-    <div class="banner">
-      <div class="banner-link">
-        <img class="banner-img" src="//img1.qunarzz.com/piao/fusion/1712/6f/be15ad6f1dd78c02.jpg_750x450_a9386d54.jpg">
+    <div class="banner" @click='handleVideoClick'>
+      <div class="beforeVideo" v-show='isVideo'>
+        <div class="banner-link">
+          <img class="banner-img" src="//img1.qunarzz.com/piao/fusion/1712/6f/be15ad6f1dd78c02.jpg_750x450_a9386d54.jpg">
+        </div>
+        <div class="banner-video">
+          <img class="banner-video-img" src="//s.qunarzz.com/piao_topic/image/touch/custom/2017/2549huaxue/videoBtn.png">
+        </div>
       </div>
-      <div class="banner-video">
-        <img class="banner-video-img" src="//s.qunarzz.com/piao_topic/image/touch/custom/2017/2549huaxue/videoBtn.png">
-      </div>
+      <video class="video" src="https://vr.qunarzz.com/videos/zhuhuichang.mp4" autoplay="autoplay" controls="" playsinline="" webkit-playsinline=""></video>
     </div>
     <prefer-skiing></prefer-skiing>
     <slider-skiing :swiperInfo='swiperInfo'></slider-skiing>
@@ -44,7 +47,8 @@
     data () {
       return {
         swiperInfo: [],
-        areaInfo: []
+        areaInfo: [],
+        isVideo: true
       }
     },
     components: {
@@ -67,6 +71,9 @@
       },
       handelBackIndexClick () {
         this.$router.push('/')
+      },
+      handleVideoClick () {
+        this.isVideo = false
       }
     },
     created () {
@@ -111,6 +118,18 @@
   }
   .banner{
     position: relative;
+  }
+  .beforeVideo{
+    position: absolute;
+  }
+  .video{
+    width: 100%;
+    height: 4.2rem;
+    position: relative;
+    top: 0;
+    left:0;
+    z-index: 3;
+    background-color: #fff;
   }
   .banner-img{
     width: 100%;

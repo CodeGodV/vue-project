@@ -7,7 +7,6 @@
   			<router-link to="/search">{{city}}</router-link>
   		</div>
   	</header>
-  	<router-link to="/hongkong">
     <swiper :options="swiperOption">
       <swiper-slide v-for="(item, index) in swiperInfo" :key="item.id">
         <div class="swiper-img-con" @click="handelSkiingClick(item.id)">
@@ -16,8 +15,7 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
-    </router-link>
-   <swiper :options="swiperOption" class="img-box">
+    <swiper :options="swiperOption" class="img-box">
       <swiper-slide v-for="(pageitem, index) in pages" :key="index">
         <div class="icon-wrapper">
         	<div v-for="icons in pageitem" :key="icons.id" class="icons-img">
@@ -36,15 +34,12 @@
   		<li><a href="#" class="iconfont">&#xe600;定位失败</a></li>
   		<li><a href="#" class="iconfont" @click="handleClickLocation">&#xe62e;5折泡温泉</a></li>
   	</ul>
-  	
   	<ul class="special-offer">
   		<li v-for="(specials, index) in specialsInfo" :key="index">
   			<a href="#"><img :src="specials.specialsUrl" alt="" /></a>
   		</li>
   	</ul>
-  	
   	<index-recommend :recommendInfo="recommendInfo"></index-recommend>
-  	
   	<div class="weekend">
   		<h3 class="gowhere">周末去哪儿</h3>
   		<div v-for="weekends in weekendInfo" :key="weekends.id" class="weekend-cont">
@@ -57,7 +52,6 @@
   			</div>
   		</div>
   	</div>
-  	
   	<div class="remark">
   		<span class="iconfont">&#xe625;</span>
   		<div class="remark-cont">
@@ -65,7 +59,6 @@
   			是指通过景区指定窗口售卖的纸质门票上标注的价格
   		</div>
   	</div>
-  	
   	<div class="footer">
   		<div class="footer-more">
   			<ul>
@@ -166,6 +159,11 @@
       handClickPalace (id) {
         if (id === '0001') {
           this.$router.push({name: 'palace'})
+        }
+      },
+      handelSkiingClick (id) {
+        if (id === '00003') {
+          this.$router.push('/skiing')
         }
       }
     },
