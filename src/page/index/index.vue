@@ -124,7 +124,9 @@
           autoplay: 5000,
           direction: 'horizontal',
           pagination: '.swiper-pagination',
-          loop: true
+          loop: true,
+          slidesPerView: 'auto',
+          loopedSlides: 4
         }
       }
     },

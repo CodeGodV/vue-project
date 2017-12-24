@@ -1,5 +1,5 @@
 <template>
-	<div class="qunarads">
+	<div class="qunarads" v-if="closefalg">
 			<div class="qunaradsCon">
 				<div class="logo">
 					<img src="//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/top-logo.png" alt="" class="logoImg">
@@ -14,9 +14,18 @@
 	</div>
 </template>
 <script>
-	export default {
-
-	}
+export default {
+  data () {
+    return {
+      closefalg: true
+    }
+  },
+  methods: {
+    handleHeaderClose: function () {
+      this.closefalg = false
+    }
+  }
+}
 </script>
 <style scoped>
 	.qunarads{
@@ -80,8 +89,8 @@
 		text-align: center;
 		border-radius: .1rem;
 		box-shadow: 0 .05rem .05rem #f3b100;
-    white-space: nowrap;
-    overflow: hidden;
+    	white-space: nowrap;
+    	overflow: hidden;
 	}
 	.close{
 		width: .3rem;

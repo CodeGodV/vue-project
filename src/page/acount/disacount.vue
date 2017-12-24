@@ -2,12 +2,16 @@
 	<div>
     <qunar-title></qunar-title>
 		<div class="header">
-			<div class="back iconfont">&#xe624;</div>
+			<router-link to='/'>
+				<div class="back iconfont">&#xe624;</div>
+			</router-link>
 			<div class="nowAcount">银联立减</div>
-			<div class="indexPage">
-				<p class="iconfont">&#xe608;</p>
-				<p>首页</p>
-			</div>
+			<router-link to="/">
+				<div class="indexPage">
+					<p class="iconfont">&#xe608;</p>
+					<p>首页</p>
+				</div>
+			</router-link>
 		</div>
 		<div class="acountCon">
 			<img src="//s.qunarzz.com/piao_topic/image/touch/custom/2017/2578unionpay11/banner.jpg" alt="">
