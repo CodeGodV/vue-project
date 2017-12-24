@@ -365,366 +365,366 @@ export default {
 }
 </script>
 <style scoped>
-.palace-box {
-  color: #212121;
-  background-color: #e0e0e0;
-}
+  .palace-box {
+    color: #212121;
+    background-color: #e0e0e0;
+  }
 
-.palace-header {
-  width: 100%;
-  height: 4rem;
-}
+  .palace-header {
+    width: 100%;
+    height: 4rem;
+  }
 
-.palace-header img {
-  width: 100%;
-  height: 100%;
-}
+  .palace-header img {
+    width: 100%;
+    height: 100%;
+  }
 
-.headerfigure {
-  box-sizing: border-box;
-  width: 100%;
-  overflow: hidden;
-  
-}
-.border-bottom{
- border-bottom: 0.025rem solid #e0e0e0;
-}
-
-.headerfigure-list {
-  width: 100%;
-  height: 0.8rem;
-  font-size: 0.28rem;
-  display: inline-block;
-  background-color: #fff;
-  overflow: hidden;
-}
-
-.headerfigure-list p {
-  width: 80%;
-  float: left;
-  line-height: 0.78rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: .1rem .2rem 0rem .2rem;
-}
-
-.headerfigure-list i {
-  display: block;
-  width: 5%;
-  line-height: 0.78rem;
-  float: right;
-}
-.conticket-list-address span{
-    font-size: .24rem;
-    color: #888;
-    line-height: .32rem;
-    margin: .1rem 0 .14rem .1rem;
-}
-.headerfigure-grade {
-  width: 100%;
-  height: 0.78rem;
-  font-size: 0.28rem;
-  display: inline-block;
-  margin-top: 0.1rem;
-  overflow: hidden;
-}
-
-.headerfigure-grade-scores {
-  width: 60%;
-  float: left;
-  line-height: 0.78rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.headerfigure-grade-numbers {
-  display: block;
-  width: 40%;
-  line-height: 0.78rem;
-  float: right;
-}
-
-.commentsinfo-con {
-  box-sizing: border-box;
-  background-color: #e8e8e8;
-  width: 100%;
-  height: 1.3rem;
-  padding-top: 0.2rem;
-}
-
-.commentsinfo-grade {
-  box-sizing: border-box;
-  width: 100%;
-  height: 0.9rem;
-  line-height: 0.9rem;
-  background-color: #fff;
-  padding: .1rem .2rem 0 .2rem;
-}
-
-.commentsinfo-grade p {
-  width: 75%;
-  float: left;
-  line-height: 0.78rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.commentsinfo-grade i {
-  display: block;
-  width: 25%;
-  line-height: 0.78rem;
-  float: right;
-}
-
-.announce-inner {
-  box-sizing: border-box;
-  width: 100%;
-  height: 0.8rem;
-}
-
-.pink {
-  background-color: #fdeede;
-}
-
-.announce-inner {
-  color: #f1441a;
-  padding: 0rem 0rem 0 .2rem;
-}
-
-.announce-inner p {
-  width: 75%;
-  float: left;
-  line-height: 0.78rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.announce-inner i {
-  display: block;
-  width: 5%;
-  line-height: 0.78rem;
-  float: right;
-}
-.con-title .con-title-text{
-  border-bottom: 0.025rem solid #e0e0e0;
-}
-.con-title-text {
-  height: .88rem;
-  background: #fff;
-  color: #333;
-  font-size: .32rem;
-  padding: 0 .2rem;
-  text-indent: .7rem;
-  line-height: .88rem;
-  text-indent: .4rem;
-  border-bottom: 0.025rem solid #e0e0e0;
-  
-}
-/*.conticket{
-  border-top: 0.025rem solid #e0e0e0;
-}
-*/
-.con-ticket {
-  box-sizing: border-box;
-  width: 100%;
-  height: 2rem;
-  background-color: #fff;
-  padding: .2rem .2rem .24rem .2rem;
-}
-
-.con-ticket-item {
-  width: 70%;
-  height: 100%;
-  float: left;
-}
-
-.con-ticket-onedaytitle {
-  display: inline;
-  width: 100%;
-  color: #212121;
-  font-size: .28rem;
-  line-height: 0.5rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.con-ticket-desctag {
-  display: inline;
-  color: #616161;
-  font-size: .24rem;
-  line-height: .32rem;
-  white-space: nowrap;
-}
-
-.con-ticket-side {
-  /*width: 25%;*/
-  height: 85%;
-  text-align: center;
-  float: right;
-  padding-top: 0.25rem;
-  padding-left: 0.25rem;
-  border-left: 0.02rem solid #e0e0e0;
-}
-
-.con-ticket-side i {
-  color: #ff9800;
-  font-size: .28rem;
-  margin-left: .04rem;
-  line-height: .3rem;
-}
-
-.con-ticket-side span {
-  font-size: 0.24rem;
-  color: #B8B8B8;
-}
-
-.con-ticket-btn {
-  width: 1.6rem;
-  height: 0.6rem;
-  line-height: 0.6rem;
-  background-color: #ff9800;
-  color: #fff;
-  font-size: .28rem;
-  text-align: center;
-  margin-left: .04rem;
-  border-radius: .06rem;
-}
-
-.content {
-  background-color: #e8e8e8;
-}
-
-.white {
-  background-color: #fff;
-}
-
-.con-ticket-group {
-  margin-top: 0.2rem;
-}
-
-.cen-button {
-  width: 100%;
-  height: 0.8rem;
-  color: gray!important;
-  background-color: #fff;
-  font-size: 0.3rem;
-  line-height: 0.8rem;
-  text-align: center;
-  box-sizing: border-box;
-}
-.conticket-list {
-  width: 100%;
-  height: 0.8rem;
-  font-size: 0.28rem;
-  display: inline-block;
-  background-color: #fff;
-  overflow: hidden;
-  padding: 0rem .2rem 0rem .2rem;
-  border-bottom: 0.025rem solid #e0e0e0;
-}
-
-.conticket-list p {
-  width: 75%;
-  float: left;
-  line-height: 0.78rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.con-ticket-list-side{
-  display: block;
-  width: 16%;
-  line-height: 0.78rem;
-  float: right;
-  padding-right: 0.32rem;
-  text-align: right;
-}
-.conticket-list i {
-  color: #ff9800;
-  font-size: .28rem;
-  margin-left: .04rem;
-  line-height: .3rem;
-}
-.userComment{
-  width: 100%;
-  margin-top: 0.2rem;
-}
-.userComment.con-title-text{
-  border-bottom: 0.025rem solid #e0e0e0;
-}
-.user-comment-text{
-  width: 100%;
-  word-break: break-all;
-  word-wrap: break-word;
-  line-height: .42rem;
-  font-size: .26rem;
-  color: #616161;
-  background-color: #fff;
-  
-}
-.user-comment-title{
-  overflow: hidden;
-}
-.user-comment-list{
-  box-sizing: border-box;
-  width: 100%;
-  background-color: #fff;
-  padding: .1rem .2rem 0rem .2rem;
-}
-.user-comment-list-comment{
-  width: 75%;
-  float: left;
-  line-height: 0.78rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.user-comment-list-date{
-  display: block;
-  width: 25%;
-  line-height: 0.78rem;
-  float: right;
-}
-.user-comment-text-icon{
-  width: 100%;
-  height: .48rem;
-  line-height: .48rem;
-  text-align: center;
-  font-size: .32rem;
-  color: #9e9e9e;
-  margin-bottom: 0.25rem;
-}
-.user-comment-imgs{
-  width: 100%;
-  overflow: hidden;
-  /*border: 1px solid yellow;*/
-}
-.user-comment-imgs img{
-  width: 32%;
-  height: 1.5rem;
-  padding: 0.05rem 0rem;
-}
-.scenic-recommend{
-  width: 100%;
-  /*height: 5rem;*/
-  background-color: #fff;
-  overflow: hidden;
-  margin-top: 0.2rem;
-}
-.center-list{
+  .headerfigure {
+    box-sizing: border-box;
     width: 100%;
     overflow: hidden;
-    height: 1.4rem;
-    padding: .24rem;
-    border:1px solid #f5f5f5; 
+    
   }
-.cen-list-right{
-  width: 74%;
-  overflow: hidden;
-  float: left;
-}  
+  .border-bottom{
+   border-bottom: 0.025rem solid #e0e0e0;
+  }
+
+  .headerfigure-list {
+    width: 100%;
+    height: 0.8rem;
+    font-size: 0.28rem;
+    display: inline-block;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+  .headerfigure-list p {
+    width: 80%;
+    float: left;
+    line-height: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: .1rem .2rem 0rem .2rem;
+  }
+
+  .headerfigure-list i {
+    display: block;
+    width: 5%;
+    line-height: 0.78rem;
+    float: right;
+  }
+  .conticket-list-address span{
+      font-size: .24rem;
+      color: #888;
+      line-height: .32rem;
+      margin: .1rem 0 .14rem .1rem;
+  }
+  .headerfigure-grade {
+    width: 100%;
+    height: 0.78rem;
+    font-size: 0.28rem;
+    display: inline-block;
+    margin-top: 0.1rem;
+    overflow: hidden;
+  }
+
+  .headerfigure-grade-scores {
+    width: 60%;
+    float: left;
+    line-height: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .headerfigure-grade-numbers {
+    display: block;
+    width: 40%;
+    line-height: 0.78rem;
+    float: right;
+  }
+
+  .commentsinfo-con {
+    box-sizing: border-box;
+    background-color: #e8e8e8;
+    width: 100%;
+    height: 1.3rem;
+    padding-top: 0.2rem;
+  }
+
+  .commentsinfo-grade {
+    box-sizing: border-box;
+    width: 100%;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    background-color: #fff;
+    padding: .1rem .2rem 0 .2rem;
+  }
+
+  .commentsinfo-grade p {
+    width: 75%;
+    float: left;
+    line-height: 0.78rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .commentsinfo-grade i {
+    display: block;
+    width: 25%;
+    line-height: 0.78rem;
+    float: right;
+  }
+
+  .announce-inner {
+    box-sizing: border-box;
+    width: 100%;
+    height: 0.8rem;
+  }
+
+  .pink {
+    background-color: #fdeede;
+  }
+
+  .announce-inner {
+    color: #f1441a;
+    padding: 0rem 0rem 0 .2rem;
+  }
+
+  .announce-inner p {
+    width: 75%;
+    float: left;
+    line-height: 0.78rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .announce-inner i {
+    display: block;
+    width: 5%;
+    line-height: 0.78rem;
+    float: right;
+  }
+  .con-title .con-title-text{
+    border-bottom: 0.025rem solid #e0e0e0;
+  }
+  .con-title-text {
+    height: .88rem;
+    background: #fff;
+    color: #333;
+    font-size: .32rem;
+    padding: 0 .2rem;
+    text-indent: .7rem;
+    line-height: .88rem;
+    text-indent: .4rem;
+    border-bottom: 0.025rem solid #e0e0e0;
+    
+  }
+  /*.conticket{
+    border-top: 0.025rem solid #e0e0e0;
+  }
+  */
+  .con-ticket {
+    box-sizing: border-box;
+    width: 100%;
+    height: 2rem;
+    background-color: #fff;
+    padding: .2rem .2rem .24rem .2rem;
+  }
+
+  .con-ticket-item {
+    width: 70%;
+    height: 100%;
+    float: left;
+  }
+
+  .con-ticket-onedaytitle {
+    display: inline;
+    width: 100%;
+    color: #212121;
+    font-size: .28rem;
+    line-height: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .con-ticket-desctag {
+    display: inline;
+    color: #616161;
+    font-size: .24rem;
+    line-height: .32rem;
+    white-space: nowrap;
+  }
+
+  .con-ticket-side {
+    /*width: 25%;*/
+    height: 85%;
+    text-align: center;
+    float: right;
+    padding-top: 0.25rem;
+    padding-left: 0.25rem;
+    border-left: 0.02rem solid #e0e0e0;
+  }
+
+  .con-ticket-side i {
+    color: #ff9800;
+    font-size: .28rem;
+    margin-left: .04rem;
+    line-height: .3rem;
+  }
+
+  .con-ticket-side span {
+    font-size: 0.24rem;
+    color: #B8B8B8;
+  }
+
+  .con-ticket-btn {
+    width: 1.6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    background-color: #ff9800;
+    color: #fff;
+    font-size: .28rem;
+    text-align: center;
+    margin-left: .04rem;
+    border-radius: .06rem;
+  }
+
+  .content {
+    background-color: #e8e8e8;
+  }
+
+  .white {
+    background-color: #fff;
+  }
+
+  .con-ticket-group {
+    margin-top: 0.2rem;
+  }
+
+  .cen-button {
+    width: 100%;
+    height: 0.8rem;
+    color: gray!important;
+    background-color: #fff;
+    font-size: 0.3rem;
+    line-height: 0.8rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .conticket-list {
+    width: 100%;
+    height: 0.8rem;
+    font-size: 0.28rem;
+    display: inline-block;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0rem .2rem 0rem .2rem;
+    border-bottom: 0.025rem solid #e0e0e0;
+  }
+
+  .conticket-list p {
+    width: 75%;
+    float: left;
+    line-height: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .con-ticket-list-side{
+    display: block;
+    width: 16%;
+    line-height: 0.78rem;
+    float: right;
+    padding-right: 0.32rem;
+    text-align: right;
+  }
+  .conticket-list i {
+    color: #ff9800;
+    font-size: .28rem;
+    margin-left: .04rem;
+    line-height: .3rem;
+  }
+  .userComment{
+    width: 100%;
+    margin-top: 0.2rem;
+  }
+  .userComment.con-title-text{
+    border-bottom: 0.025rem solid #e0e0e0;
+  }
+  .user-comment-text{
+    width: 100%;
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: .42rem;
+    font-size: .26rem;
+    color: #616161;
+    background-color: #fff;
+    
+  }
+  .user-comment-title{
+    overflow: hidden;
+  }
+  .user-comment-list{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    padding: .1rem .2rem 0rem .2rem;
+  }
+  .user-comment-list-comment{
+    width: 75%;
+    float: left;
+    line-height: 0.78rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .user-comment-list-date{
+    display: block;
+    width: 25%;
+    line-height: 0.78rem;
+    float: right;
+  }
+  .user-comment-text-icon{
+    width: 100%;
+    height: .48rem;
+    line-height: .48rem;
+    text-align: center;
+    font-size: .32rem;
+    color: #9e9e9e;
+    margin-bottom: 0.25rem;
+  }
+  .user-comment-imgs{
+    width: 100%;
+    overflow: hidden;
+    /*border: 1px solid yellow;*/
+  }
+  .user-comment-imgs img{
+    width: 32%;
+    height: 1.5rem;
+    padding: 0.05rem 0rem;
+  }
+  .scenic-recommend{
+    width: 100%;
+    /*height: 5rem;*/
+    background-color: #fff;
+    overflow: hidden;
+    margin-top: 0.2rem;
+  }
+  .center-list{
+      width: 100%;
+      overflow: hidden;
+      height: 1.4rem;
+      padding: .24rem;
+      border:1px solid #f5f5f5; 
+    }
+  .cen-list-right{
+    width: 74%;
+    overflow: hidden;
+    float: left;
+  }  
   .cen-list-item>div{
     display: inline-block;
     font-size: 0.35rem;
@@ -791,6 +791,4 @@ export default {
       margin-left:0.5rem; 
       display: inline-block;
     }
-
-
 </style>

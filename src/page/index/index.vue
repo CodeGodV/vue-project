@@ -7,7 +7,6 @@
   			<router-link to="/search">{{city}}</router-link>
   		</div>
   	</header>
-  	<router-link to="/hongkong">
     <swiper :options="swiperOption">
       <swiper-slide v-for="(item, index) in swiperInfo" :key="item.id">
         <div class="swiper-img-con" @click="handelSkiingClick(item.id)">
@@ -16,8 +15,7 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
-    </router-link>
-   <swiper :options="swiperOption" class="img-box">
+    <swiper :options="swiperOption" class="img-box">
       <swiper-slide v-for="(pageitem, index) in pages" :key="index">
         <div class="icon-wrapper">
         	<div v-for="icons in pageitem" :key="icons.id" class="icons-img">
@@ -161,6 +159,11 @@
       handClickPalace (id) {
         if (id === '0001') {
           this.$router.push({name: 'palace'})
+        }
+      },
+      handelSkiingClick (id) {
+        if (id === '00003') {
+          this.$router.push('/skiing')
         }
       }
     },

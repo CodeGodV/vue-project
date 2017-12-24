@@ -267,7 +267,6 @@
   }
   .arrange-info i{
     position: absolute;
-    z-index: 2;
     top: 2px;
     left: .2rem;
     color: #00afc7;
