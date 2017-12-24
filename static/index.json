@@ -45,38 +45,38 @@
 		},{
 			"id":"0008",
 			"icon":"http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png",
-			"keys":"跑温泉"
+			"keys":"泡温泉"
 		},{
-			"id":"0009",
+			"id":"09",
 			"icon":"http://img1.qunarzz.com/piao/fusion/1611/cd/07f33cc087f18d02.png",
 			"keys":"自然风光"
 		},{
-			"id":"00010",
+			"id":"010",
 			"icon":"http://img1.qunarzz.com/piao/fusion/1611/17/4bd370f3eb1acd02.png",
 			"keys":"演出"
 		},{
-			"id":"00011",
+			"id":"011",
 			"icon":"http://img1.qunarzz.com/piao/fusion/1611/1c/a8a8d9023a814c02.png",
 			"keys":"名胜古迹"
 		},{
-			"id":"00012",
+			"id":"012",
 			"icon":"https://img1.qunarzz.com/piao/fusion/1602/f2/71eb19f77e3f21f7.png",
-			"keys":"周边玩"
+			"keys":"周边游"
 		},{
-			"id":"00013",
+			"id":"013",
 			"icon":"http://img1.qunarzz.com/piao/fusion/1611/7f/b1ea3c8c7fb6db02.png",
 			"keys":"城市风光"
 		},{
-			"id":"00014",
+			"id":"014",
 			"icon":"http://img1.qunarzz.com/piao/fusion/1611/ea/8cb1dce519375d02.png",
 			"keys":"古北水镇"
 		},{
-			"id":"00015",
+			"id":"015",
 			"icon":"http://img1.qunarzz.com/piao/fusion/1707/34/9285073fde1eb702.png",
 			"keys":"景点讲解"
 		},{
-			"id":"00016",
-			"icon":"http://img1.qunarzz.com/piao/fusion/1611/be/a70e61e1f57ee302.png",
+			"id":"016",
+			"icon":"http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png",
 			"keys":"全部"
 		}],
 		"specials":[{
