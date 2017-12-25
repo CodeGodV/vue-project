@@ -12,14 +12,15 @@ import store from './store/index'
 import VueLazyload from 'vue-lazyload'
 FastClick.attach(document.body)
 Vue.config.productionTip = false
-Vue.use(VueSwiper)                                                             
+
+Vue.use(VueSwiper)                                                      
 Vue.use(VueResource)
 Vue.use(VueLazyload, {
-	error: require('./assets/img/xiao2.png'),
-	loading: require('./assets/img/xiao1.png'),
-	preLoad: 0.8,
-	attempt: 1,
-	try: 0
+  error: require('./assets/img/xiao2.png'),
+  loading: require('./assets/img/xiao1.png'),
+  preLoad: 0.8,
+  attempt: 1,
+  try: 0
 })
 /* eslint-disable no-new */
 new Vue({
