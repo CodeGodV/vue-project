@@ -213,7 +213,7 @@
     },
     methods: {
       getHotSpring () {
-        this.$http.get('./static/hotspring.json')
+        this.$http.get('../static/hotspring.json')
           .then(this.handleSuccAjax.bind(this))
       },
       handleSuccAjax (res) {
