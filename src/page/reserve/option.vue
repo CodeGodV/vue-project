@@ -1,9 +1,9 @@
 <template>
-  <div class="option-box">
+  <div class="option-box" ref='box'>
     <div class="option">
       <div class="option-info">
         <h5 class="option-info-title">天安门故宫珍宝馆+八达岭+颐和园+恭王府联票无线耳麦人工讲解</h5>
-        <div class="option-close iconfont">&#xe634;</div>
+        <div class="option-close iconfont" @click='handelCloseClick'>&#xe634;</div>
         <p class="option-info-price">
           <span class="option-info-icon">&yen;</span>
           <span class="option-info-text">27</span>
@@ -60,14 +60,22 @@
           <span class="select-card select-card-active">不含餐</span>
         </div>
       </div>
-      <a class="option-footer-btn" href="#">立即预订</a>
+      <a class="option-footer-btn" href="javascript:;" @click='handelInfoClick'>立即预订</a>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Reserve'
+    name: 'Reserve',
+    methods: {
+      handelCloseClick () {
+        this.$refs.box.style.display = 'none'
+      },
+      handelInfoClick () {
+        this.$router.push('./order')
+      }
+    }
   }
 </script>
 
@@ -76,7 +84,6 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    display: none;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.4);
@@ -138,6 +145,7 @@
     background: #ff9800;
     font-size: 0.4rem;
     color: #fff;
+    z-index: 99;
   }
   .option-date{
     margin: 0.18rem 0.2rem 0 0.2rem;
