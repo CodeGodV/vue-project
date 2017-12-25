@@ -42,12 +42,12 @@
       </div>
 
       <ul class="select-title">
-        <li v-for="item in titleInfo" :key="item.id">
-          <span class="title-cont">{{item.title}}</span>
+        <li v-for="(item, index) in titleInfo" :key="item.id">
+          <span class="title-cont" @click="handleClickSelect(index)">{{item.title}}</span>
         </li>
       </ul>
 
-      <div class="worth-hots">
+      <div class="worth-hots" ref="select0">
         <h2 class="title">超值温泉</h2>
         <p class="introduce">{{worthRecommend}}</p>
         <div v-for="item in worthInfo" :key="item.id" class="worth-cont">
@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div class="landskip">
+      <div class="landskip" ref="select1">
         <h2 class="title">山水温泉</h2>
         <ul class="label">
           <li v-for="item in listInfo" :key="item.id">
@@ -99,7 +99,7 @@
         </div>
       </div>
 
-      <div class="landskip">
+      <div class="landskip" ref="select2">
         <h2 class="title">养生温泉</h2>
         <ul class="label">
           <li v-for="item in listInfo" :key="item.id">
@@ -123,8 +123,8 @@
         </div>
       </div>
 
-      <div class="landskip">
-        <h2 class="title">亲子温泉</h2>
+      <div class="landskip" ref="select3">
+        <h2 class="title">省心一日游</h2>
         <ul class="label">
           <li v-for="item in listInfo" :key="item.id">
             <span>{{item}}</span>
@@ -147,7 +147,7 @@
         </div>
       </div>
 
-      <div class="save">
+      <div class="save" ref="select4">
         <h2 class="title">亲子温泉</h2>
         <ul class="label">
           <li v-for="item in listInfo" :key="item.id">
@@ -175,7 +175,7 @@
       </div>
 
     </div>
-    <footer>
+    <footer ref="select5">
       <h2>
 				<span>查看更多温泉产品</span>
 			</h2>
@@ -205,7 +205,8 @@
         estimate: '',
         landskipList: [],
         saveInfo: [],
-        hitInfo: []
+        hitInfo: [],
+        scrolled: ''
       }
     },
     mounted () {
@@ -225,6 +226,11 @@
         this.landskipTitle = res.body.data.landskipTitle
         this.saveInfo = res.body.data.save
         this.hitInfo = res.body.data.list
+      },
+      handleClickSelect (index) {
+      	var ref = eval('this.$refs.select' + index)
+				this.scrolled = ref.offsetTop;
+				document.documentElement.scrollTop = this.scrolled
       }
     }
   }
