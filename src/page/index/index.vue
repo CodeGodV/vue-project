@@ -250,7 +250,7 @@
 		padding:0.5rem 0.5rem 0.1rem 0.5rem;
 	}
 	.icons-img {
-		Width: 25%;
+		width: 25%;
 		box-sizing: border-box;
 		text-align: center;
 	}
@@ -290,7 +290,7 @@
 	}
 	.special-offer li a {
 		display: flex;
-		Height: 1.38rem;
+		height: 1.38rem;
 	}
 	.special-offer li:first-child {
 		border-right: 0.01rem solid #ccc;
@@ -372,7 +372,7 @@
   .footer-more ul li .iconfont {
     font-size: .44rem!important;
     color: #b2b2b2;
-    line-Height: .94rem;
+    line-height: .94rem;
   }
   .footer-more ul li .footer-w {
     font-size: 0.26rem;

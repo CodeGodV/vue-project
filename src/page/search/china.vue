@@ -30,13 +30,9 @@ export default {
     }
   },
   methods: {
-<<<<<<< HEAD
     handleJumpClick (index) {
       document.documentElement.scrollTop = this.$refs.li[index].offsetTop - 44
     },
-=======
-    handleJumpClick (number) {},
->>>>>>> 5d206aa9a3492e2337a7cbe29fdcbccc269580d4
     handleCityChange (city) {
       this.$store.commit('changeCity', city)
     },
