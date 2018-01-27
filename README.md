@@ -1,1 +1,11 @@
-## git第一次
+这是一个vue的demo，仿quner的线上项目完成。                                                                                                   
+功能实现不够完整。                                                                                                                           
+主要技术：                                                                                                                                 
+1.bette-scroll                                                                                                                             
+2.swiper                                                                                                                                   
+3.vuex                                                                                                                                     
+4.动态路由匹配                                                                                                                             
+5.v-lazy                                                                                                                                   
+6.按需打包--虽然本身比较小，只是为了研究一下                                                                                                   
+7.keep-alive                                                                                                                               
+8.以及使用闭包节流+activited提升性能
